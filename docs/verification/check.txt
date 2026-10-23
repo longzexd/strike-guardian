@@ -1,0 +1,5 @@
+
+> strike-guardian@2.0.0 check
+> node scripts/check.mjs
+
+All application modules pass syntax checks

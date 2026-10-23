@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-23",
+  "environment": "Local application, mainnet public GET only; no API Wallet configured",
+  "checks": [
+    {
+      "action": "English default",
+      "result": "PASS",
+      "evidence": "HTML lang=en and English selected on first visit"
+    },
+    {
+      "action": "Language switch and reload",
+      "result": "PASS",
+      "evidence": "Chinese persisted after reload; English restored without changing plan semantics"
+    },
+    {
+      "action": "$10,000 notional, 10x long",
+      "result": "PASS",
+      "evidence": "Live entry VWAP, margin assumption and shock PnL displayed"
+    },
+    {
+      "action": "$1,000,000 depth shortage",
+      "result": "PASS",
+      "evidence": "20-level full fill: No; unfilled quantity shown; complete VWAP unavailable"
+    },
+    {
+      "action": "Funding and history",
+      "result": "PASS",
+      "evidence": "1/8/24-hour funding estimates and 60 official one-minute mark candles"
+    },
+    {
+      "action": "Fixed stop / recommendation without account",
+      "result": "PASS",
+      "evidence": "Margin mode unverified; full assessment and recommendation blocked"
+    },
+    {
+      "action": "Private account live authorization",
+      "result": "NOT VERIFIED",
+      "evidence": "No user API Wallet used; no claim of live account end-to-end success"
+    }
+  ]
+}

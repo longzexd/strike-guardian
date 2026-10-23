@@ -1,0 +1,4875 @@
+{
+  "product": "Strike Guardian",
+  "mode": "READ_ONLY_REAL_DATA",
+  "uiLanguage": "en",
+  "exportedAt": "2026-10-23T10:59:03.555Z",
+  "plan": {
+    "symbol": "BTC-USD",
+    "side": "long",
+    "quantity": "0.12263000",
+    "leverage": "10",
+    "stop": "79913.00000000",
+    "stopMode": "price",
+    "stopAmount": "",
+    "holdingHours": "8"
+  },
+  "accountId": null,
+  "assessment": {
+    "ok": false,
+    "reasons": [
+      "account 不可用：需要 API Wallet 授权"
+    ],
+    "metrics": null
+  },
+  "marketAnalysis": {
+    "opening": {
+      "complete": true,
+      "filled": 0.12263,
+      "unfilled": 0,
+      "vwap": 81548.80037511,
+      "worst": 81551,
+      "cost": 10000.32939
+    },
+    "closing": {
+      "complete": true,
+      "filled": 0.12263,
+      "unfilled": 0,
+      "vwap": 81544.19962488,
+      "worst": 81542,
+      "cost": 9999.7652
+    },
+    "depthBands": [
+      {
+        "band": 0.001,
+        "bid": 361261.79874,
+        "ask": 338295.9795899999
+      },
+      {
+        "band": 0.005,
+        "bid": 386529.30452,
+        "ask": 395296.2390699999
+      },
+      {
+        "band": 0.01,
+        "bid": 386529.30452,
+        "ask": 395296.2390699999
+      }
+    ],
+    "funding": {
+      "periods": 8,
+      "rate": 0.0000111611737481859,
+      "next": 1792753200000,
+      "estimate": -0.8928707489018366,
+      "hours": 8
+    },
+    "entry": 81548.80037511,
+    "notional": 10000.32938999974,
+    "margin": 1000.032938999974,
+    "liquidation": 73688.67503775,
+    "stopLoss": 200.59819999973982,
+    "stopFeesKnown": false,
+    "openingFee": null,
+    "slippageBps": 0.588685263171306,
+    "priceBoundExceeded": false,
+    "roundTripSpread": -0.5641900007055574,
+    "scenarios": [
+      {
+        "change": -20,
+        "price": 65235.200000000004,
+        "gross": -2000.5368139997393,
+        "marginBalance": -1000.5038749997652,
+        "maintenance": 31.999170304000003,
+        "liquidatable": true,
+        "exitFee": null,
+        "estimatedNet": null
+      },
+      {
+        "change": -10,
+        "price": 73389.6,
+        "gross": -1000.5627419997392,
+        "marginBalance": -0.5298029997651383,
+        "maintenance": 35.999066592000005,
+        "liquidatable": true,
+        "exitFee": null,
+        "estimatedNet": null
+      },
+      {
+        "change": -5,
+        "price": 77466.8,
+        "gross": -500.57570599973945,
+        "marginBalance": 499.45723300023457,
+        "maintenance": 37.99901473600001,
+        "liquidatable": false,
+        "exitFee": null,
+        "estimatedNet": null
+      },
+      {
+        "change": 5,
+        "price": 85621.2,
+        "gross": 499.39836600025984,
+        "marginBalance": 1499.4313050002338,
+        "maintenance": 41.998911024,
+        "liquidatable": false,
+        "exitFee": null,
+        "estimatedNet": null
+      },
+      {
+        "change": 10,
+        "price": 89698.40000000001,
+        "gross": 999.3854020002613,
+        "marginBalance": 1999.4183410002352,
+        "maintenance": 43.998859168,
+        "liquidatable": false,
+        "exitFee": null,
+        "estimatedNet": null
+      },
+      {
+        "change": 20,
+        "price": 97852.8,
+        "gross": 1999.3594740002607,
+        "marginBalance": 2999.3924130002347,
+        "maintenance": 47.998755456,
+        "liquidatable": false,
+        "exitFee": null,
+        "estimatedNet": null
+      }
+    ]
+  },
+  "officialData": {
+    "network": "mainnet",
+    "origin": "https://api.strikefinance.org",
+    "symbol": "BTC-USD",
+    "packets": {
+      "time": {
+        "ok": true,
+        "data": {
+          "serverTime": 1792753142144.5
+        },
+        "at": 1792753142075,
+        "route": "/v2/time"
+      },
+      "account": {
+        "ok": false,
+        "error": "需要 API Wallet 授权",
+        "route": "/v2/account"
+      },
+      "symbols": {
+        "ok": false,
+        "error": "需要 API Wallet 授权",
+        "route": "/v2/symbols"
+      },
+      "positions": {
+        "ok": false,
+        "error": "需要 API Wallet 授权",
+        "route": "/v2/positions"
+      },
+      "openOrders": {
+        "ok": false,
+        "error": "需要 API Wallet 授权",
+        "route": "/v2/openOrders"
+      },
+      "portfolio": {
+        "ok": false,
+        "error": "需要 API Wallet 授权",
+        "route": "/v2/portfolio"
+      },
+      "orderHistory": {
+        "ok": false,
+        "error": "需要 API Wallet 授权",
+        "route": "/v2/history/order?limit=20"
+      },
+      "fillHistory": {
+        "ok": false,
+        "error": "需要 API Wallet 授权",
+        "route": "/v2/history/fill?limit=20"
+      },
+      "markets": {
+        "ok": true,
+        "data": {
+          "markets": {
+            "AAOI-USD": {
+              "symbol": "AAOI-USD",
+              "name": "Applied Optoelectronics / USD",
+              "base_asset": "AAOI",
+              "status": "trading",
+              "created_at": 1786699827571,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 10,
+              "margin_tiers": [
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "0.000"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 2,
+                  "maintenance_margin_rate": "0.0333",
+                  "maintenance_amount": "830.0000"
+                },
+                {
+                  "max_notional": "500000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.0333",
+                  "maintenance_amount": "830.0000"
+                },
+                {
+                  "max_notional": "2000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "9180.0000"
+                },
+                {
+                  "max_notional": "5000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "109180.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.125",
+                  "maintenance_amount": "234180.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.01",
+              "order_min_price": "0.01",
+              "order_max_price": "20000",
+              "order_limit_price_bound": "0.03",
+              "order_market_price_bound": "0.03",
+              "order_limit_step_size": "0.01",
+              "order_limit_min_size": "0.01",
+              "order_limit_max_size": "30000",
+              "order_market_step_size": "0.01",
+              "order_market_min_size": "0.01",
+              "order_market_max_size": "2000",
+              "order_min_notional": "5",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.03",
+              "mark_price": "69.85223549",
+              "index_price": "69.76912227",
+              "last_price": "69.88",
+              "bid1_price": "69.83",
+              "bid1_size": "2.14",
+              "ask1_price": "69.87",
+              "ask1_size": "2.14",
+              "funding_rate": "0.0000000000000000000",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "1000"
+            },
+            "ADA-USD": {
+              "symbol": "ADA-USD",
+              "name": "Cardano / USD",
+              "base_asset": "ADA",
+              "status": "trading",
+              "created_at": 0,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "10000",
+                  "max_leverage": 40,
+                  "maintenance_margin_rate": "0.005",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "25000",
+                  "max_leverage": 40,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "50.000"
+                },
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 25,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "50.000"
+                },
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.015",
+                  "maintenance_amount": "300.000"
+                },
+                {
+                  "max_notional": "200000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.015",
+                  "maintenance_amount": "300.000"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "1300.000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "1300.000"
+                },
+                {
+                  "max_notional": "2000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "6300.000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "56300.000"
+                },
+                {
+                  "max_notional": "20000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "556300.000"
+                },
+                {
+                  "max_notional": "25000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.125",
+                  "maintenance_amount": "1056300.000"
+                },
+                {
+                  "max_notional": "50000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.25",
+                  "maintenance_amount": "4181300.000"
+                },
+                {
+                  "max_notional": "100000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.5",
+                  "maintenance_amount": "16681300.000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.00001",
+              "order_min_price": "0.00010",
+              "order_max_price": "20000",
+              "order_limit_price_bound": "0.05",
+              "order_market_price_bound": "0.05",
+              "order_limit_step_size": "1",
+              "order_limit_min_size": "1",
+              "order_limit_max_size": "6000000",
+              "order_market_step_size": "1",
+              "order_market_min_size": "1",
+              "order_market_max_size": "2000000",
+              "order_min_notional": "10",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.05",
+              "mark_price": "0.21565560",
+              "index_price": "0.21537220",
+              "last_price": "0.21622",
+              "bid1_price": "0.21563",
+              "bid1_size": "2318",
+              "ask1_price": "0.21572",
+              "ask1_size": "2317",
+              "funding_rate": "0.0000661146896792681",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "2000"
+            },
+            "BNB-USD": {
+              "symbol": "BNB-USD",
+              "name": "BNB / USD",
+              "base_asset": "BNB",
+              "status": "trading",
+              "created_at": 1787851854871,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "10000",
+                  "max_leverage": 100,
+                  "maintenance_margin_rate": "0.005",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "200000",
+                  "max_leverage": 50,
+                  "maintenance_margin_rate": "0.006",
+                  "maintenance_amount": "10.000"
+                },
+                {
+                  "max_notional": "400000",
+                  "max_leverage": 40,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "810.000"
+                },
+                {
+                  "max_notional": "1500000",
+                  "max_leverage": 25,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "4810.000"
+                },
+                {
+                  "max_notional": "3000000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "12310.000"
+                },
+                {
+                  "max_notional": "15000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "87310.000"
+                },
+                {
+                  "max_notional": "30000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "837310.000"
+                },
+                {
+                  "max_notional": "37500000",
+                  "max_leverage": 4,
+                  "maintenance_margin_rate": "0.125",
+                  "maintenance_amount": "1587310.000"
+                },
+                {
+                  "max_notional": "75000000",
+                  "max_leverage": 2,
+                  "maintenance_margin_rate": "0.25",
+                  "maintenance_amount": "6274810.000"
+                },
+                {
+                  "max_notional": "150000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.5",
+                  "maintenance_amount": "25024810.000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.01",
+              "order_min_price": "6.6",
+              "order_max_price": "100000",
+              "order_limit_price_bound": "0.05",
+              "order_market_price_bound": "0.05",
+              "order_limit_step_size": "0.01",
+              "order_limit_min_size": "0.01",
+              "order_limit_max_size": "100000",
+              "order_market_step_size": "0.01",
+              "order_market_min_size": "0.01",
+              "order_market_max_size": "2000",
+              "order_min_notional": "5",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.05",
+              "mark_price": "745.43",
+              "index_price": "745.45126692",
+              "last_price": "747.03",
+              "bid1_price": "745.28",
+              "bid1_size": "1.00",
+              "ask1_price": "745.43",
+              "ask1_size": "1.00",
+              "funding_rate": "0.0000125000000000000",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "2500"
+            },
+            "BTC-USD": {
+              "symbol": "BTC-USD",
+              "name": "Bitcoin / USD",
+              "base_asset": "BTC",
+              "status": "trading",
+              "created_at": 0,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 10,
+              "margin_tiers": [
+                {
+                  "max_notional": "10000",
+                  "max_leverage": 100,
+                  "maintenance_margin_rate": "0.004",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 75,
+                  "maintenance_margin_rate": "0.004",
+                  "maintenance_amount": "0.000"
+                },
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 50,
+                  "maintenance_margin_rate": "0.004",
+                  "maintenance_amount": "0.000"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 40,
+                  "maintenance_margin_rate": "0.004",
+                  "maintenance_amount": "0.000"
+                },
+                {
+                  "max_notional": "300000",
+                  "max_leverage": 25,
+                  "maintenance_margin_rate": "0.004",
+                  "maintenance_amount": "0.000"
+                },
+                {
+                  "max_notional": "800000",
+                  "max_leverage": 25,
+                  "maintenance_margin_rate": "0.005",
+                  "maintenance_amount": "300.000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 25,
+                  "maintenance_margin_rate": "0.0065",
+                  "maintenance_amount": "1500.0000"
+                },
+                {
+                  "max_notional": "2500000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.0065",
+                  "maintenance_amount": "1500.0000"
+                },
+                {
+                  "max_notional": "3000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.0065",
+                  "maintenance_amount": "1500.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "12000.0000"
+                },
+                {
+                  "max_notional": "12000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "12000.0000"
+                },
+                {
+                  "max_notional": "25000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "132000.0000"
+                },
+                {
+                  "max_notional": "70000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "132000.0000"
+                },
+                {
+                  "max_notional": "100000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "482000.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "1",
+              "order_min_price": "10",
+              "order_max_price": "100000",
+              "order_limit_price_bound": "0.05",
+              "order_market_price_bound": "0.05",
+              "order_limit_step_size": "0.00001",
+              "order_limit_min_size": "0.00001",
+              "order_limit_max_size": "1000",
+              "order_market_step_size": "0.00001",
+              "order_market_min_size": "0.00001",
+              "order_market_max_size": "120",
+              "order_min_notional": "10",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.05",
+              "mark_price": "81544",
+              "index_price": "81578.40437197",
+              "last_price": "81544",
+              "bid1_price": "81543",
+              "bid1_size": "0.03679",
+              "ask1_price": "81544",
+              "ask1_size": "0.03678",
+              "funding_rate": "0.0000111592200316813",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "2500"
+            },
+            "COIN-USD": {
+              "symbol": "COIN-USD",
+              "name": "Coinbase / USD",
+              "base_asset": "COIN",
+              "status": "trading",
+              "created_at": 1787761684510,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.0333",
+                  "maintenance_amount": "830.0000"
+                },
+                {
+                  "max_notional": "500000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.0333",
+                  "maintenance_amount": "830.0000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "9180.0000"
+                },
+                {
+                  "max_notional": "2000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "9180.0000"
+                },
+                {
+                  "max_notional": "5000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "109180.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "109180.0000"
+                },
+                {
+                  "max_notional": "25000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1667",
+                  "maintenance_amount": "776180.0000"
+                },
+                {
+                  "max_notional": "50000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.25",
+                  "maintenance_amount": "2858680.0000"
+                },
+                {
+                  "max_notional": "100000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.5",
+                  "maintenance_amount": "15358680.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.01",
+              "order_min_price": "0.01",
+              "order_max_price": "20000",
+              "order_limit_price_bound": "0.03",
+              "order_market_price_bound": "0.03",
+              "order_limit_step_size": "0.01",
+              "order_limit_min_size": "0.01",
+              "order_limit_max_size": "24000",
+              "order_market_step_size": "0.01",
+              "order_market_min_size": "0.01",
+              "order_market_max_size": "2000",
+              "order_min_notional": "5",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.03",
+              "mark_price": "170.16",
+              "index_price": "170.20861027",
+              "last_price": "170.40",
+              "bid1_price": "170.06",
+              "bid1_size": "3.52",
+              "ask1_price": "170.16",
+              "ask1_size": "3.52",
+              "funding_rate": "0.0000000000000000000",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "1000"
+            },
+            "CRCL-USD": {
+              "symbol": "CRCL-USD",
+              "name": "CRCL / USD",
+              "base_asset": "CRCL",
+              "status": "trading",
+              "created_at": 1788114276359,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "20000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "500.000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.10",
+                  "maintenance_amount": "5500.000"
+                },
+                {
+                  "max_notional": "2000000",
+                  "max_leverage": 4,
+                  "maintenance_margin_rate": "0.125",
+                  "maintenance_amount": "30500.000"
+                },
+                {
+                  "max_notional": "5000000",
+                  "max_leverage": 2,
+                  "maintenance_margin_rate": "0.25",
+                  "maintenance_amount": "280500.000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.50",
+                  "maintenance_amount": "1530500.000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.001",
+              "order_min_price": "0.01",
+              "order_max_price": "20000",
+              "order_limit_price_bound": "0.03",
+              "order_market_price_bound": "0.03",
+              "order_limit_step_size": "0.01",
+              "order_limit_min_size": "0.01",
+              "order_limit_max_size": "70000",
+              "order_market_step_size": "0.01",
+              "order_market_min_size": "0.01",
+              "order_market_max_size": "7000",
+              "order_min_notional": "5",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.03",
+              "mark_price": "86.69599077",
+              "index_price": "86.66780954",
+              "last_price": "86.712",
+              "bid1_price": "86.645",
+              "bid1_size": "6.92",
+              "ask1_price": "86.697",
+              "ask1_size": "6.92",
+              "funding_rate": "0.0000000000000000000",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "1000"
+            },
+            "CXMT-USD": {
+              "symbol": "CXMT-USD",
+              "name": "ChangXin Memory Technologies / USD",
+              "base_asset": "CXMT",
+              "status": "trading",
+              "created_at": 1785516585542,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 10,
+              "margin_tiers": [
+                {
+                  "max_notional": "5000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "10000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "125.000"
+                },
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "125.000"
+                },
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "2625.000"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 2,
+                  "maintenance_margin_rate": "0.1667",
+                  "maintenance_amount": "9295.0000"
+                },
+                {
+                  "max_notional": "2500000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.25",
+                  "maintenance_amount": "30120.0000"
+                },
+                {
+                  "max_notional": "5000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.5",
+                  "maintenance_amount": "655120.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.5",
+                  "maintenance_amount": "655120.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.0001",
+              "order_min_price": "0.001",
+              "order_max_price": "20000",
+              "order_limit_price_bound": "0.03",
+              "order_market_price_bound": "0.03",
+              "order_limit_step_size": "0.1",
+              "order_limit_min_size": "0.1",
+              "order_limit_max_size": "7160",
+              "order_market_step_size": "0.1",
+              "order_market_min_size": "0.1",
+              "order_market_max_size": "3580",
+              "order_min_notional": "5",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.03",
+              "mark_price": "6.3328",
+              "index_price": "6.34685147",
+              "last_price": "6.3361",
+              "bid1_price": "6.3298",
+              "bid1_size": "23.6",
+              "ask1_price": "6.3336",
+              "ask1_size": "23.6",
+              "funding_rate": "-0.0000908982409375825",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "1000"
+            },
+            "DOGE-USD": {
+              "symbol": "DOGE-USD",
+              "name": "Dogecoin / USD",
+              "base_asset": "DOGE",
+              "status": "trading",
+              "created_at": 1792592839544,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "80000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.0065",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "280.0000"
+                },
+                {
+                  "max_notional": "150000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "280.0000"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.0125",
+                  "maintenance_amount": "655.0000"
+                },
+                {
+                  "max_notional": "750000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.0125",
+                  "maintenance_amount": "655.0000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "6280.0000"
+                },
+                {
+                  "max_notional": "2000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "6280.0000"
+                },
+                {
+                  "max_notional": "4000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "16280.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "116280.0000"
+                },
+                {
+                  "max_notional": "20000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "116280.0000"
+                },
+                {
+                  "max_notional": "40000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "1116280.0000"
+                },
+                {
+                  "max_notional": "50000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.125",
+                  "maintenance_amount": "2116280.0000"
+                },
+                {
+                  "max_notional": "100000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.25",
+                  "maintenance_amount": "8366280.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.00001",
+              "order_min_price": "0.00244",
+              "order_max_price": "30",
+              "order_limit_price_bound": "0.05",
+              "order_market_price_bound": "0.05",
+              "order_limit_step_size": "1",
+              "order_limit_min_size": "1",
+              "order_limit_max_size": "300000000",
+              "order_market_step_size": "1",
+              "order_market_min_size": "1",
+              "order_market_max_size": "30000000",
+              "order_min_notional": "10",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.05",
+              "mark_price": "0.07983",
+              "index_price": "0.07985374",
+              "last_price": "0.07998",
+              "bid1_price": "0.07980",
+              "bid1_size": "4699",
+              "ask1_price": "0.07983",
+              "ask1_size": "11749",
+              "funding_rate": "0.0000125000000000000",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "1000"
+            },
+            "DRAM-USD": {
+              "symbol": "DRAM-USD",
+              "name": "Roundhill Memory ETF / USD",
+              "base_asset": "DRAM",
+              "status": "trading",
+              "created_at": 1787072625093,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "500.00"
+                },
+                {
+                  "max_notional": "200000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "500.00"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "1500.000"
+                },
+                {
+                  "max_notional": "400000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "1500.000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.0333",
+                  "maintenance_amount": "4820.0000"
+                },
+                {
+                  "max_notional": "5000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "21520.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "271520.0000"
+                },
+                {
+                  "max_notional": "15000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "271520.0000"
+                },
+                {
+                  "max_notional": "20000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.125",
+                  "maintenance_amount": "646520.0000"
+                },
+                {
+                  "max_notional": "30000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1667",
+                  "maintenance_amount": "1480520.0000"
+                },
+                {
+                  "max_notional": "50000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.25",
+                  "maintenance_amount": "3979520.0000"
+                },
+                {
+                  "max_notional": "100000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.5",
+                  "maintenance_amount": "16479520.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.001",
+              "order_min_price": "0.01",
+              "order_max_price": "20000",
+              "order_limit_price_bound": "0.03",
+              "order_market_price_bound": "0.03",
+              "order_limit_step_size": "0.01",
+              "order_limit_min_size": "0.01",
+              "order_limit_max_size": "70000",
+              "order_market_step_size": "0.01",
+              "order_market_min_size": "0.01",
+              "order_market_max_size": "6800",
+              "order_min_notional": "5",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.03",
+              "mark_price": "46.96825502",
+              "index_price": "46.93679014",
+              "last_price": "47.333",
+              "bid1_price": "46.949",
+              "bid1_size": "12.77",
+              "ask1_price": "46.977",
+              "ask1_size": "12.77",
+              "funding_rate": "0.0000000000000000000",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "1000"
+            },
+            "ETH-USD": {
+              "symbol": "ETH-USD",
+              "name": "Ethereum / USD",
+              "base_asset": "ETH",
+              "status": "trading",
+              "created_at": 0,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "10000",
+                  "max_leverage": 100,
+                  "maintenance_margin_rate": "0.004",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "25000",
+                  "max_leverage": 75,
+                  "maintenance_margin_rate": "0.004",
+                  "maintenance_amount": "0.000"
+                },
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 50,
+                  "maintenance_margin_rate": "0.004",
+                  "maintenance_amount": "0.000"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 40,
+                  "maintenance_margin_rate": "0.004",
+                  "maintenance_amount": "0.000"
+                },
+                {
+                  "max_notional": "300000",
+                  "max_leverage": 25,
+                  "maintenance_margin_rate": "0.004",
+                  "maintenance_amount": "0.000"
+                },
+                {
+                  "max_notional": "800000",
+                  "max_leverage": 25,
+                  "maintenance_margin_rate": "0.005",
+                  "maintenance_amount": "300.000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 25,
+                  "maintenance_margin_rate": "0.0065",
+                  "maintenance_amount": "1500.0000"
+                },
+                {
+                  "max_notional": "2500000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.0065",
+                  "maintenance_amount": "1500.0000"
+                },
+                {
+                  "max_notional": "3000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.0065",
+                  "maintenance_amount": "1500.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "12000.0000"
+                },
+                {
+                  "max_notional": "12000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "12000.0000"
+                },
+                {
+                  "max_notional": "25000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "132000.0000"
+                },
+                {
+                  "max_notional": "50000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "132000.0000"
+                },
+                {
+                  "max_notional": "65000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "382000.0000"
+                },
+                {
+                  "max_notional": "100000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "2007000.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.1",
+              "order_min_price": "39.9",
+              "order_max_price": "306177",
+              "order_limit_price_bound": "0.05",
+              "order_market_price_bound": "0.05",
+              "order_limit_step_size": "0.001",
+              "order_limit_min_size": "0.001",
+              "order_limit_max_size": "10000",
+              "order_market_step_size": "0.001",
+              "order_market_min_size": "0.001",
+              "order_market_max_size": "2000",
+              "order_min_notional": "10",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.05",
+              "mark_price": "2393.31863840",
+              "index_price": "2394.30900274",
+              "last_price": "2394.1",
+              "bid1_price": "2393.1",
+              "bid1_size": "0.417",
+              "ask1_price": "2393.3",
+              "ask1_size": "0.417",
+              "funding_rate": "0.0000125000000000000",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "2500"
+            },
+            "GOOGL-USD": {
+              "symbol": "GOOGL-USD",
+              "name": "Alphabet Class A / USD",
+              "base_asset": "GOOGL",
+              "status": "trading",
+              "created_at": 1786986690414,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "500.00"
+                },
+                {
+                  "max_notional": "200000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "500.00"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "1500.000"
+                },
+                {
+                  "max_notional": "400000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "1500.000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.0333",
+                  "maintenance_amount": "4820.0000"
+                },
+                {
+                  "max_notional": "5000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "21520.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "271520.0000"
+                },
+                {
+                  "max_notional": "15000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "271520.0000"
+                },
+                {
+                  "max_notional": "20000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.125",
+                  "maintenance_amount": "646520.0000"
+                },
+                {
+                  "max_notional": "30000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1667",
+                  "maintenance_amount": "1480520.0000"
+                },
+                {
+                  "max_notional": "50000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.25",
+                  "maintenance_amount": "3979520.0000"
+                },
+                {
+                  "max_notional": "100000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.5",
+                  "maintenance_amount": "16479520.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.01",
+              "order_min_price": "0.01",
+              "order_max_price": "20000",
+              "order_limit_price_bound": "0.05",
+              "order_market_price_bound": "0.05",
+              "order_limit_step_size": "0.01",
+              "order_limit_min_size": "0.01",
+              "order_limit_max_size": "20000",
+              "order_market_step_size": "0.01",
+              "order_market_min_size": "0.01",
+              "order_market_max_size": "2000",
+              "order_min_notional": "10",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.05",
+              "mark_price": "323.14175359",
+              "index_price": "322.99407982",
+              "last_price": "325.89",
+              "bid1_price": "323.01",
+              "bid1_size": "6.19",
+              "ask1_price": "323.21",
+              "ask1_size": "6.18",
+              "funding_rate": "0.0000000000000000000",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "1000"
+            },
+            "HYPE-USD": {
+              "symbol": "HYPE-USD",
+              "name": "Hyperliquid / USD",
+              "base_asset": "HYPE",
+              "status": "trading",
+              "created_at": 0,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "20000",
+                  "max_leverage": 40,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "25000",
+                  "max_leverage": 40,
+                  "maintenance_margin_rate": "0.015",
+                  "maintenance_amount": "100.000"
+                },
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 25,
+                  "maintenance_margin_rate": "0.015",
+                  "maintenance_amount": "100.000"
+                },
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.015",
+                  "maintenance_amount": "100.000"
+                },
+                {
+                  "max_notional": "200000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.015",
+                  "maintenance_amount": "100.000"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "1100.000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "1100.000"
+                },
+                {
+                  "max_notional": "2000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "6100.000"
+                },
+                {
+                  "max_notional": "5000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "56100.000"
+                },
+                {
+                  "max_notional": "7500000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "306100.000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "306100.000"
+                },
+                {
+                  "max_notional": "12500000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.25",
+                  "maintenance_amount": "1806100.000"
+                },
+                {
+                  "max_notional": "15000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.5",
+                  "maintenance_amount": "4931100.000"
+                },
+                {
+                  "max_notional": "100000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.5",
+                  "maintenance_amount": "4931100.000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.001",
+              "order_min_price": "0.001",
+              "order_max_price": "20000",
+              "order_limit_price_bound": "0.05",
+              "order_market_price_bound": "0.05",
+              "order_limit_step_size": "0.01",
+              "order_limit_min_size": "0.01",
+              "order_limit_max_size": "200000",
+              "order_market_step_size": "0.01",
+              "order_market_min_size": "0.01",
+              "order_market_max_size": "20000",
+              "order_min_notional": "10",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.05",
+              "mark_price": "77.40570048",
+              "index_price": "77.43735409",
+              "last_price": "77.399",
+              "bid1_price": "77.393",
+              "bid1_size": "9.69",
+              "ask1_price": "77.409",
+              "ask1_size": "9.68",
+              "funding_rate": "0.0000125000000000000",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "2000"
+            },
+            "LIT-USD": {
+              "symbol": "LIT-USD",
+              "name": "Lighter / USD",
+              "base_asset": "LIT",
+              "status": "trading",
+              "created_at": 1792679699346,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "5000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "10000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.015",
+                  "maintenance_amount": "25.000"
+                },
+                {
+                  "max_notional": "25000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "75.000"
+                },
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "200.000"
+                },
+                {
+                  "max_notional": "125000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "1450.000"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "7700.000"
+                },
+                {
+                  "max_notional": "500000",
+                  "max_leverage": 4,
+                  "maintenance_margin_rate": "0.125",
+                  "maintenance_amount": "13950.000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 3,
+                  "maintenance_margin_rate": "0.1667",
+                  "maintenance_amount": "34800.0000"
+                },
+                {
+                  "max_notional": "7500000",
+                  "max_leverage": 2,
+                  "maintenance_margin_rate": "0.25",
+                  "maintenance_amount": "118100.0000"
+                },
+                {
+                  "max_notional": "12500000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.5",
+                  "maintenance_amount": "1993100.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.0001",
+              "order_min_price": "0.0001",
+              "order_max_price": "200",
+              "order_limit_price_bound": "0.15",
+              "order_market_price_bound": "0.15",
+              "order_limit_step_size": "0.1",
+              "order_limit_min_size": "0.1",
+              "order_limit_max_size": "300000",
+              "order_market_step_size": "0.1",
+              "order_market_min_size": "0.1",
+              "order_market_max_size": "70000",
+              "order_min_notional": "5",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.15",
+              "mark_price": "3.3725",
+              "index_price": "3.37535686",
+              "last_price": "3.4604",
+              "bid1_price": "3.3708",
+              "bid1_size": "222.4",
+              "ask1_price": "3.3728",
+              "ask1_size": "222.3",
+              "funding_rate": "-0.0000350568116419622",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "1000"
+            },
+            "MINIMAX-USD": {
+              "symbol": "MINIMAX-USD",
+              "name": "MiniMax Group / USD",
+              "base_asset": "MINIMAX",
+              "status": "trading",
+              "created_at": 1786468292374,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 10,
+              "margin_tiers": [
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "0.00"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 2,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "0.00"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "1250.000"
+                },
+                {
+                  "max_notional": "2000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.0333",
+                  "maintenance_amount": "9550.0000"
+                },
+                {
+                  "max_notional": "5000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "42950.0000"
+                },
+                {
+                  "max_notional": "8000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "292950.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.125",
+                  "maintenance_amount": "492950.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.001",
+              "order_min_price": "0.01",
+              "order_max_price": "20000",
+              "order_limit_price_bound": "0.03",
+              "order_market_price_bound": "0.03",
+              "order_limit_step_size": "0.01",
+              "order_limit_min_size": "0.01",
+              "order_limit_max_size": "160000",
+              "order_market_step_size": "0.01",
+              "order_market_min_size": "0.01",
+              "order_market_max_size": "12000",
+              "order_min_notional": "5",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.03",
+              "mark_price": "23.722",
+              "index_price": "23.71624864",
+              "last_price": "23.731",
+              "bid1_price": "23.708",
+              "bid1_size": "4.21",
+              "ask1_price": "23.722",
+              "ask1_size": "4.21",
+              "funding_rate": "0.0000000000000000000",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "1000"
+            },
+            "MU-USD": {
+              "symbol": "MU-USD",
+              "name": "Micron / USD",
+              "base_asset": "MU",
+              "status": "trading",
+              "created_at": 1782348648792,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.0125",
+                  "maintenance_amount": "125.0000"
+                },
+                {
+                  "max_notional": "200000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.0125",
+                  "maintenance_amount": "125.0000"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "1625.0000"
+                },
+                {
+                  "max_notional": "500000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "1625.0000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "4125.0000"
+                },
+                {
+                  "max_notional": "2000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.0333",
+                  "maintenance_amount": "12425.0000"
+                },
+                {
+                  "max_notional": "5000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "45825.0000"
+                },
+                {
+                  "max_notional": "8000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "295825.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "295825.0000"
+                },
+                {
+                  "max_notional": "20000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.125",
+                  "maintenance_amount": "545825.0000"
+                },
+                {
+                  "max_notional": "50000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1667",
+                  "maintenance_amount": "1379825.0000"
+                },
+                {
+                  "max_notional": "100000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.25",
+                  "maintenance_amount": "5544825.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.01",
+              "order_min_price": "0.01",
+              "order_max_price": "20000",
+              "order_limit_price_bound": "0.03",
+              "order_market_price_bound": "0.03",
+              "order_limit_step_size": "0.01",
+              "order_limit_min_size": "0.01",
+              "order_limit_max_size": "10000",
+              "order_market_step_size": "0.01",
+              "order_market_min_size": "0.01",
+              "order_market_max_size": "1000",
+              "order_min_notional": "5",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.03",
+              "mark_price": "867.34",
+              "index_price": "866.91245598",
+              "last_price": "867.83",
+              "bid1_price": "867.02",
+              "bid1_size": "1.15",
+              "ask1_price": "867.54",
+              "ask1_size": "1.15",
+              "funding_rate": "0.0000091640532590463",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "1000"
+            },
+            "NAS100-USD": {
+              "symbol": "NAS100-USD",
+              "name": "NASDAQ 100 / USD",
+              "base_asset": "NAS100",
+              "status": "trading",
+              "created_at": 1784343842560,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 40,
+                  "maintenance_margin_rate": "0.015",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 25,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "250.000"
+                },
+                {
+                  "max_notional": "150000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "250.000"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "1000.000"
+                },
+                {
+                  "max_notional": "300000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "1000.000"
+                },
+                {
+                  "max_notional": "500000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.0333",
+                  "maintenance_amount": "3490.0000"
+                },
+                {
+                  "max_notional": "750000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.0333",
+                  "maintenance_amount": "3490.0000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "16015.0000"
+                },
+                {
+                  "max_notional": "3000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "16015.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "166015.0000"
+                },
+                {
+                  "max_notional": "15000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.125",
+                  "maintenance_amount": "416015.0000"
+                },
+                {
+                  "max_notional": "25000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1667",
+                  "maintenance_amount": "1041515.0000"
+                },
+                {
+                  "max_notional": "50000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.25",
+                  "maintenance_amount": "3124015.0000"
+                },
+                {
+                  "max_notional": "100000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.5",
+                  "maintenance_amount": "15624015.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "1",
+              "order_min_price": "1000",
+              "order_max_price": "100000",
+              "order_limit_price_bound": "0.05",
+              "order_market_price_bound": "0.03",
+              "order_limit_step_size": "0.0001",
+              "order_limit_min_size": "0.0001",
+              "order_limit_max_size": "20",
+              "order_market_step_size": "0.0001",
+              "order_market_min_size": "0.0001",
+              "order_market_max_size": "10",
+              "order_min_notional": "10",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.05",
+              "mark_price": "28920.02017838",
+              "index_price": "28909.94601691",
+              "last_price": "28991",
+              "bid1_price": "28919",
+              "bid1_size": "0.0103",
+              "ask1_price": "28927",
+              "ask1_size": "0.0103",
+              "funding_rate": "0.0000000000000000000",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "2000"
+            },
+            "NEAR-USD": {
+              "symbol": "NEAR-USD",
+              "name": "Near / USD",
+              "base_asset": "NEAR",
+              "status": "trading",
+              "created_at": 1780946589027,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "20000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.015",
+                  "maintenance_amount": "100.000"
+                },
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.015",
+                  "maintenance_amount": "100.000"
+                },
+                {
+                  "max_notional": "200000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.015",
+                  "maintenance_amount": "100.000"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "1100.000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 2,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "1100.000"
+                },
+                {
+                  "max_notional": "2000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "6100.000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "56100.000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.0001",
+              "order_min_price": "0.001",
+              "order_max_price": "1000",
+              "order_limit_price_bound": "0.05",
+              "order_market_price_bound": "0.05",
+              "order_limit_step_size": "0.1",
+              "order_limit_min_size": "0.1",
+              "order_limit_max_size": "900000",
+              "order_market_step_size": "0.1",
+              "order_market_min_size": "0.1",
+              "order_market_max_size": "173052.7",
+              "order_min_notional": "10",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.05",
+              "mark_price": "4.8791",
+              "index_price": "4.88031776",
+              "last_price": "4.8815",
+              "bid1_price": "4.8754",
+              "bid1_size": "153.8",
+              "ask1_price": "4.8783",
+              "ask1_size": "153.7",
+              "funding_rate": "0.0000125000000000000",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "1000"
+            },
+            "NIGHT-USD": {
+              "symbol": "NIGHT-USD",
+              "name": "Night / USD",
+              "base_asset": "NIGHT",
+              "status": "trading",
+              "created_at": 0,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 10,
+              "margin_tiers": [
+                {
+                  "max_notional": "5000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.015",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "10000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "50.000"
+                },
+                {
+                  "max_notional": "20000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "300.000"
+                },
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "300.000"
+                },
+                {
+                  "max_notional": "125000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "300.000"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "6550.000"
+                },
+                {
+                  "max_notional": "500000",
+                  "max_leverage": 2,
+                  "maintenance_margin_rate": "0.1667",
+                  "maintenance_amount": "23225.0000"
+                },
+                {
+                  "max_notional": "7500000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.25",
+                  "maintenance_amount": "64875.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.5",
+                  "maintenance_amount": "1939875.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.000001",
+              "order_min_price": "0.00001",
+              "order_max_price": "200",
+              "order_limit_price_bound": "0.05",
+              "order_market_price_bound": "0.05",
+              "order_limit_step_size": "1",
+              "order_limit_min_size": "1",
+              "order_limit_max_size": "40000000",
+              "order_market_step_size": "1",
+              "order_market_min_size": "1",
+              "order_market_max_size": "4000000",
+              "order_min_notional": "10",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.15",
+              "mark_price": "0.03873085",
+              "index_price": "0.03843049",
+              "last_price": "0.038954",
+              "bid1_price": "0.038503",
+              "bid1_size": "404277",
+              "ask1_price": "0.038886",
+              "ask1_size": "1111",
+              "funding_rate": "0.0001688683355157831",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "1000"
+            },
+            "NVDA-USD": {
+              "symbol": "NVDA-USD",
+              "name": "NVIDIA / USD",
+              "base_asset": "NVDA",
+              "status": "trading",
+              "created_at": 1780587336234,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "500.00"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "500.00"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "1750.000"
+                },
+                {
+                  "max_notional": "2000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.0333",
+                  "maintenance_amount": "10050.0000"
+                },
+                {
+                  "max_notional": "5000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "43450.0000"
+                },
+                {
+                  "max_notional": "8000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "293450.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "293450.0000"
+                },
+                {
+                  "max_notional": "15000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.125",
+                  "maintenance_amount": "543450.0000"
+                },
+                {
+                  "max_notional": "25000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1667",
+                  "maintenance_amount": "1168950.0000"
+                },
+                {
+                  "max_notional": "50000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.25",
+                  "maintenance_amount": "3251450.0000"
+                },
+                {
+                  "max_notional": "100000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.5",
+                  "maintenance_amount": "15751450.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.01",
+              "order_min_price": "0.01",
+              "order_max_price": "20000",
+              "order_limit_price_bound": "0.05",
+              "order_market_price_bound": "0.05",
+              "order_limit_step_size": "0.01",
+              "order_limit_min_size": "0.01",
+              "order_limit_max_size": "30000",
+              "order_market_step_size": "0.01",
+              "order_market_min_size": "0.01",
+              "order_market_max_size": "3000",
+              "order_min_notional": "10",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.05",
+              "mark_price": "212.89515576",
+              "index_price": "212.81957645",
+              "last_price": "213.13",
+              "bid1_price": "212.83",
+              "bid1_size": "9.39",
+              "ask1_price": "212.95",
+              "ask1_size": "9.39",
+              "funding_rate": "0.0000000000000000000",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "1000"
+            },
+            "PUMP-USD": {
+              "symbol": "PUMP-USD",
+              "name": "Pump.fun / USD",
+              "base_asset": "PUMP",
+              "status": "trading",
+              "created_at": 1788027282142,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "20000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "200000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.015",
+                  "maintenance_amount": "100.000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "1100.000"
+                },
+                {
+                  "max_notional": "2000000",
+                  "max_leverage": 4,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "6100.000"
+                },
+                {
+                  "max_notional": "5000000",
+                  "max_leverage": 3,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "56100.000"
+                },
+                {
+                  "max_notional": "7500000",
+                  "max_leverage": 2,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "306100.000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.125",
+                  "maintenance_amount": "493600.000"
+                },
+                {
+                  "max_notional": "12500000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.25",
+                  "maintenance_amount": "1743600.000"
+                },
+                {
+                  "max_notional": "15000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.5",
+                  "maintenance_amount": "4868600.000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.0000001",
+              "order_min_price": "0.000001",
+              "order_max_price": "200",
+              "order_limit_price_bound": "0.15",
+              "order_market_price_bound": "0.15",
+              "order_limit_step_size": "1",
+              "order_limit_min_size": "1",
+              "order_limit_max_size": "900000000",
+              "order_market_step_size": "1",
+              "order_market_min_size": "1",
+              "order_market_max_size": "90000000",
+              "order_min_notional": "5",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.15",
+              "mark_price": "0.0045378",
+              "index_price": "0.00453998",
+              "last_price": "0.0045420",
+              "bid1_price": "0.0045351",
+              "bid1_size": "55125",
+              "ask1_price": "0.0045378",
+              "ask1_size": "55092",
+              "funding_rate": "0.0000040201269383340",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "1000"
+            },
+            "SKHYNIX-USD": {
+              "symbol": "SKHYNIX-USD",
+              "name": "SK Hynix / USD",
+              "base_asset": "SKHYNIX",
+              "status": "trading",
+              "created_at": 1782752990731,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.0125",
+                  "maintenance_amount": "125.0000"
+                },
+                {
+                  "max_notional": "200000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.0125",
+                  "maintenance_amount": "125.0000"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "1625.0000"
+                },
+                {
+                  "max_notional": "500000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "1625.0000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "4125.0000"
+                },
+                {
+                  "max_notional": "2000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.0333",
+                  "maintenance_amount": "12425.0000"
+                },
+                {
+                  "max_notional": "5000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "45825.0000"
+                },
+                {
+                  "max_notional": "8000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "295825.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "295825.0000"
+                },
+                {
+                  "max_notional": "20000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.125",
+                  "maintenance_amount": "545825.0000"
+                },
+                {
+                  "max_notional": "50000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1667",
+                  "maintenance_amount": "1379825.0000"
+                },
+                {
+                  "max_notional": "100000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.25",
+                  "maintenance_amount": "5544825.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.1",
+              "order_min_price": "0.1",
+              "order_max_price": "20000",
+              "order_limit_price_bound": "0.03",
+              "order_market_price_bound": "0.03",
+              "order_limit_step_size": "0.01",
+              "order_limit_min_size": "0.01",
+              "order_limit_max_size": "20000",
+              "order_market_step_size": "0.01",
+              "order_market_min_size": "0.01",
+              "order_market_max_size": "2000",
+              "order_min_notional": "5",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.03",
+              "mark_price": "951.79528533",
+              "index_price": "953.02962342",
+              "last_price": "953.1",
+              "bid1_price": "950.8",
+              "bid1_size": "0.78",
+              "ask1_price": "951.4",
+              "ask1_size": "0.78",
+              "funding_rate": "0.0000000000000000000",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "1000"
+            },
+            "SNDK-USD": {
+              "symbol": "SNDK-USD",
+              "name": "SanDisk / USD",
+              "base_asset": "SNDK",
+              "status": "trading",
+              "created_at": 1782421547669,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.0065",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "175.0000"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "175.0000"
+                },
+                {
+                  "max_notional": "500000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "2675.0000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "5175.0000"
+                },
+                {
+                  "max_notional": "1500000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "5175.0000"
+                },
+                {
+                  "max_notional": "5000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.0333",
+                  "maintenance_amount": "17625.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "101125.0000"
+                },
+                {
+                  "max_notional": "25000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "601125.0000"
+                },
+                {
+                  "max_notional": "50000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.125",
+                  "maintenance_amount": "1226125.0000"
+                },
+                {
+                  "max_notional": "100000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1667",
+                  "maintenance_amount": "3311125.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.1",
+              "order_min_price": "0.1",
+              "order_max_price": "20000",
+              "order_limit_price_bound": "0.03",
+              "order_market_price_bound": "0.03",
+              "order_limit_step_size": "0.01",
+              "order_limit_min_size": "0.01",
+              "order_limit_max_size": "6000",
+              "order_market_step_size": "0.01",
+              "order_market_min_size": "0.01",
+              "order_market_max_size": "600",
+              "order_min_notional": "5",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.03",
+              "mark_price": "1288.4",
+              "index_price": "1287.90574200",
+              "last_price": "1295.3",
+              "bid1_price": "1287.9",
+              "bid1_size": "0.77",
+              "ask1_price": "1288.7",
+              "ask1_size": "0.77",
+              "funding_rate": "0.0000000000000000000",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "1000"
+            },
+            "SOL-USD": {
+              "symbol": "SOL-USD",
+              "name": "Solana / USD",
+              "base_asset": "SOL",
+              "status": "trading",
+              "created_at": 0,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "10000",
+                  "max_leverage": 100,
+                  "maintenance_margin_rate": "0.005",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "25000",
+                  "max_leverage": 75,
+                  "maintenance_margin_rate": "0.005",
+                  "maintenance_amount": "0.000"
+                },
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 50,
+                  "maintenance_margin_rate": "0.005",
+                  "maintenance_amount": "0.000"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 40,
+                  "maintenance_margin_rate": "0.0065",
+                  "maintenance_amount": "75.0000"
+                },
+                {
+                  "max_notional": "400000",
+                  "max_leverage": 25,
+                  "maintenance_margin_rate": "0.0065",
+                  "maintenance_amount": "75.0000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 25,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "1475.0000"
+                },
+                {
+                  "max_notional": "2500000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "11475.0000"
+                },
+                {
+                  "max_notional": "4000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "11475.0000"
+                },
+                {
+                  "max_notional": "8000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "31475.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "231475.0000"
+                },
+                {
+                  "max_notional": "25000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "231475.0000"
+                },
+                {
+                  "max_notional": "40000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "231475.0000"
+                },
+                {
+                  "max_notional": "80000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "2231475.0000"
+                },
+                {
+                  "max_notional": "100000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.125",
+                  "maintenance_amount": "4231475.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.01",
+              "order_min_price": "0.42",
+              "order_max_price": "6857",
+              "order_limit_price_bound": "0.05",
+              "order_market_price_bound": "0.05",
+              "order_limit_step_size": "0.01",
+              "order_limit_min_size": "0.01",
+              "order_limit_max_size": "1000000",
+              "order_market_step_size": "0.01",
+              "order_market_min_size": "0.01",
+              "order_market_max_size": "6000",
+              "order_min_notional": "10",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.05",
+              "mark_price": "103.88",
+              "index_price": "103.92436783",
+              "last_price": "104.01",
+              "bid1_price": "103.85",
+              "bid1_size": "38.50",
+              "ask1_price": "103.88",
+              "ask1_size": "38.49",
+              "funding_rate": "0.0000125000000000000",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "2500"
+            },
+            "SP500-USD": {
+              "symbol": "SP500-USD",
+              "name": "S&P 500 / USD",
+              "base_asset": "SP500",
+              "status": "trading",
+              "created_at": 1786904368935,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 50,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 25,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "500.00"
+                },
+                {
+                  "max_notional": "200000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "500.00"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "1500.000"
+                },
+                {
+                  "max_notional": "400000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "1500.000"
+                },
+                {
+                  "max_notional": "500000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.0333",
+                  "maintenance_amount": "4820.0000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.0333",
+                  "maintenance_amount": "4820.0000"
+                },
+                {
+                  "max_notional": "5000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "21520.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "271520.0000"
+                },
+                {
+                  "max_notional": "15000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "271520.0000"
+                },
+                {
+                  "max_notional": "20000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.125",
+                  "maintenance_amount": "646520.0000"
+                },
+                {
+                  "max_notional": "30000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1667",
+                  "maintenance_amount": "1480520.0000"
+                },
+                {
+                  "max_notional": "50000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.25",
+                  "maintenance_amount": "3979520.0000"
+                },
+                {
+                  "max_notional": "100000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.5",
+                  "maintenance_amount": "16479520.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.1",
+              "order_min_price": "100",
+              "order_max_price": "100000",
+              "order_limit_price_bound": "0.05",
+              "order_market_price_bound": "0.03",
+              "order_limit_step_size": "0.001",
+              "order_limit_min_size": "0.001",
+              "order_limit_max_size": "68",
+              "order_market_step_size": "0.001",
+              "order_market_min_size": "0.001",
+              "order_market_max_size": "34",
+              "order_min_notional": "10",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.05",
+              "mark_price": "7638.27306854",
+              "index_price": "7638.27306854",
+              "last_price": "7647.0",
+              "bid1_price": "7636.5",
+              "bid1_size": "0.039",
+              "ask1_price": "7638.8",
+              "ask1_size": "0.039",
+              "funding_rate": "0",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "2500"
+            },
+            "SPCX-USD": {
+              "symbol": "SPCX-USD",
+              "name": "SpaceX / USD",
+              "base_asset": "SPCX",
+              "status": "trading",
+              "created_at": 1781016377848,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 5,
+              "margin_tiers": [
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.0065",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "175.0000"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "175.0000"
+                },
+                {
+                  "max_notional": "500000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "2675.0000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "5175.0000"
+                },
+                {
+                  "max_notional": "1500000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "5175.0000"
+                },
+                {
+                  "max_notional": "5000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.0333",
+                  "maintenance_amount": "17625.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "101125.0000"
+                },
+                {
+                  "max_notional": "25000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "601125.0000"
+                },
+                {
+                  "max_notional": "50000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.125",
+                  "maintenance_amount": "1226125.0000"
+                },
+                {
+                  "max_notional": "100000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1667",
+                  "maintenance_amount": "3311125.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.01",
+              "order_min_price": "0.01",
+              "order_max_price": "10000",
+              "order_limit_price_bound": "0.10",
+              "order_market_price_bound": "0.10",
+              "order_limit_step_size": "0.01",
+              "order_limit_min_size": "0.01",
+              "order_limit_max_size": "100000",
+              "order_market_step_size": "0.01",
+              "order_market_min_size": "0.01",
+              "order_market_max_size": "5000",
+              "order_min_notional": "10",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.15",
+              "mark_price": "147.14364000",
+              "index_price": "147.11667596",
+              "last_price": "149.48",
+              "bid1_price": "147.09",
+              "bid1_size": "1.69",
+              "ask1_price": "147.18",
+              "ask1_size": "1.69",
+              "funding_rate": "0.0000000000000000000",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "1000"
+            },
+            "TSLA-USD": {
+              "symbol": "TSLA-USD",
+              "name": "Tesla / USD",
+              "base_asset": "TSLA",
+              "status": "trading",
+              "created_at": 1784909224668,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "150000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "0.00"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "750.000"
+                },
+                {
+                  "max_notional": "300000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "750.000"
+                },
+                {
+                  "max_notional": "750000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.0333",
+                  "maintenance_amount": "3240.0000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "15765.0000"
+                },
+                {
+                  "max_notional": "3000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "15765.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "165765.0000"
+                },
+                {
+                  "max_notional": "15000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.125",
+                  "maintenance_amount": "415765.0000"
+                },
+                {
+                  "max_notional": "25000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1667",
+                  "maintenance_amount": "1041265.0000"
+                },
+                {
+                  "max_notional": "50000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.25",
+                  "maintenance_amount": "3123765.0000"
+                },
+                {
+                  "max_notional": "100000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.5",
+                  "maintenance_amount": "15623765.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.01",
+              "order_min_price": "0.01",
+              "order_max_price": "100000",
+              "order_limit_price_bound": "0.03",
+              "order_market_price_bound": "0.03",
+              "order_limit_step_size": "0.01",
+              "order_limit_min_size": "0.01",
+              "order_limit_max_size": "20000",
+              "order_market_step_size": "0.01",
+              "order_market_min_size": "0.01",
+              "order_market_max_size": "2000",
+              "order_min_notional": "5",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.03",
+              "mark_price": "376.34351208",
+              "index_price": "376.21308110",
+              "last_price": "379.98",
+              "bid1_price": "376.19",
+              "bid1_size": "1.32",
+              "ask1_price": "376.42",
+              "ask1_size": "1.32",
+              "funding_rate": "0.0000000000000000000",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "1000"
+            },
+            "UNITREE-USD": {
+              "symbol": "UNITREE-USD",
+              "name": "Unitree Robotics / USD",
+              "base_asset": "UNITREE",
+              "status": "trading",
+              "created_at": 1787118821622,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 10,
+              "margin_tiers": [
+                {
+                  "max_notional": "5000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "10000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "125.000"
+                },
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "125.000"
+                },
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "2625.000"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 2,
+                  "maintenance_margin_rate": "0.1667",
+                  "maintenance_amount": "9295.0000"
+                },
+                {
+                  "max_notional": "2500000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.25",
+                  "maintenance_amount": "30120.0000"
+                },
+                {
+                  "max_notional": "5000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.5",
+                  "maintenance_amount": "655120.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.5",
+                  "maintenance_amount": "655120.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.001",
+              "order_min_price": "0.01",
+              "order_max_price": "20000",
+              "order_limit_price_bound": "0.10",
+              "order_market_price_bound": "0.05",
+              "order_limit_step_size": "0.01",
+              "order_limit_min_size": "0.01",
+              "order_limit_max_size": "30000",
+              "order_market_step_size": "0.01",
+              "order_market_min_size": "0.01",
+              "order_market_max_size": "2000",
+              "order_min_notional": "5",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.05",
+              "mark_price": "93.550",
+              "index_price": "93.57274308",
+              "last_price": "93.592",
+              "bid1_price": "93.494",
+              "bid1_size": "1.06",
+              "ask1_price": "93.550",
+              "ask1_size": "1.06",
+              "funding_rate": "0.0000272971243972099",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "1000"
+            },
+            "WTI-USD": {
+              "symbol": "WTI-USD",
+              "name": "WTI Crude Oil / USD",
+              "base_asset": "WTI",
+              "status": "trading",
+              "created_at": 0,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.005",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.0065",
+                  "maintenance_amount": "75.0000"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.0065",
+                  "maintenance_amount": "75.0000"
+                },
+                {
+                  "max_notional": "400000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.0065",
+                  "maintenance_amount": "75.0000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "1475.0000"
+                },
+                {
+                  "max_notional": "4000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "11475.0000"
+                },
+                {
+                  "max_notional": "8000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "31475.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "231475.0000"
+                },
+                {
+                  "max_notional": "40000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "231475.0000"
+                },
+                {
+                  "max_notional": "80000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "2231475.0000"
+                },
+                {
+                  "max_notional": "100000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.125",
+                  "maintenance_amount": "4231475.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.001",
+              "order_min_price": "0.01",
+              "order_max_price": "20000",
+              "order_limit_price_bound": "0.05",
+              "order_market_price_bound": "0.05",
+              "order_limit_step_size": "0.01",
+              "order_limit_min_size": "0.01",
+              "order_limit_max_size": "200000",
+              "order_market_step_size": "0.01",
+              "order_market_min_size": "0.01",
+              "order_market_max_size": "500",
+              "order_min_notional": "10",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.05",
+              "mark_price": "101.21824734",
+              "index_price": "101.21824734",
+              "last_price": "101.237",
+              "bid1_price": "101.203",
+              "bid1_size": "4.94",
+              "ask1_price": "101.223",
+              "ask1_size": "4.93",
+              "funding_rate": "0.0000000000000000000",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "1000"
+            },
+            "XAG-USD": {
+              "symbol": "XAG-USD",
+              "name": "Silver / USD",
+              "base_asset": "XAG",
+              "status": "trading",
+              "created_at": 0,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.005",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.0065",
+                  "maintenance_amount": "75.0000"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.0065",
+                  "maintenance_amount": "75.0000"
+                },
+                {
+                  "max_notional": "400000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.0065",
+                  "maintenance_amount": "75.0000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "1475.0000"
+                },
+                {
+                  "max_notional": "4000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "11475.0000"
+                },
+                {
+                  "max_notional": "8000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "31475.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "231475.0000"
+                },
+                {
+                  "max_notional": "40000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "231475.0000"
+                },
+                {
+                  "max_notional": "80000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "2231475.0000"
+                },
+                {
+                  "max_notional": "100000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.125",
+                  "maintenance_amount": "4231475.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.001",
+              "order_min_price": "0.01",
+              "order_max_price": "2000",
+              "order_limit_price_bound": "0.05",
+              "order_market_price_bound": "0.05",
+              "order_limit_step_size": "0.001",
+              "order_limit_min_size": "0.001",
+              "order_limit_max_size": "35000",
+              "order_market_step_size": "0.001",
+              "order_market_min_size": "0.001",
+              "order_market_max_size": "3500",
+              "order_min_notional": "10",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.05",
+              "mark_price": "53.909",
+              "index_price": "53.88916651",
+              "last_price": "53.873",
+              "bid1_price": "53.910",
+              "bid1_size": "9.274",
+              "ask1_price": "53.942",
+              "ask1_size": "9.269",
+              "funding_rate": "0.0000000000000000000",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "1000"
+            },
+            "XAU-USD": {
+              "symbol": "XAU-USD",
+              "name": "Gold / USD",
+              "base_asset": "XAU",
+              "status": "trading",
+              "created_at": 0,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.005",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.0065",
+                  "maintenance_amount": "75.0000"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.0065",
+                  "maintenance_amount": "75.0000"
+                },
+                {
+                  "max_notional": "400000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.0065",
+                  "maintenance_amount": "75.0000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "1475.0000"
+                },
+                {
+                  "max_notional": "4000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "11475.0000"
+                },
+                {
+                  "max_notional": "8000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "31475.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "231475.0000"
+                },
+                {
+                  "max_notional": "40000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "231475.0000"
+                },
+                {
+                  "max_notional": "80000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "2231475.0000"
+                },
+                {
+                  "max_notional": "100000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.125",
+                  "maintenance_amount": "4231475.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.1",
+              "order_min_price": "0.1",
+              "order_max_price": "200000",
+              "order_limit_price_bound": "0.05",
+              "order_market_price_bound": "0.05",
+              "order_limit_step_size": "0.001",
+              "order_limit_min_size": "0.001",
+              "order_limit_max_size": "600",
+              "order_market_step_size": "0.001",
+              "order_market_min_size": "0.001",
+              "order_market_max_size": "60",
+              "order_min_notional": "10",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.05",
+              "mark_price": "4024.2",
+              "index_price": "4022.15983564",
+              "last_price": "4020",
+              "bid1_price": "4024.2",
+              "bid1_size": "0.124",
+              "ask1_price": "4026.6",
+              "ask1_size": "0.124",
+              "funding_rate": "0.0000000000000000000",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "1000"
+            },
+            "XRP-USD": {
+              "symbol": "XRP-USD",
+              "name": "XRP / USD",
+              "base_asset": "XRP",
+              "status": "trading",
+              "created_at": 0,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "10000",
+                  "max_leverage": 100,
+                  "maintenance_margin_rate": "0.005",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "25000",
+                  "max_leverage": 75,
+                  "maintenance_margin_rate": "0.005",
+                  "maintenance_amount": "0.000"
+                },
+                {
+                  "max_notional": "40000",
+                  "max_leverage": 50,
+                  "maintenance_margin_rate": "0.005",
+                  "maintenance_amount": "0.000"
+                },
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 50,
+                  "maintenance_margin_rate": "0.006",
+                  "maintenance_amount": "40.000"
+                },
+                {
+                  "max_notional": "80000",
+                  "max_leverage": 40,
+                  "maintenance_margin_rate": "0.006",
+                  "maintenance_amount": "40.000"
+                },
+                {
+                  "max_notional": "150000",
+                  "max_leverage": 40,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "360.000"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 40,
+                  "maintenance_margin_rate": "0.0125",
+                  "maintenance_amount": "735.0000"
+                },
+                {
+                  "max_notional": "400000",
+                  "max_leverage": 25,
+                  "maintenance_margin_rate": "0.0125",
+                  "maintenance_amount": "735.0000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 25,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "3735.0000"
+                },
+                {
+                  "max_notional": "2000000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "8735.0000"
+                },
+                {
+                  "max_notional": "2500000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "8735.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "71235.0000"
+                },
+                {
+                  "max_notional": "20000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "571235.0000"
+                },
+                {
+                  "max_notional": "25000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "571235.0000"
+                },
+                {
+                  "max_notional": "50000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.25",
+                  "maintenance_amount": "4321235.0000"
+                },
+                {
+                  "max_notional": "100000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.5",
+                  "maintenance_amount": "16821235.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.0001",
+              "order_min_price": "0.0001",
+              "order_max_price": "10000",
+              "order_limit_price_bound": "0.05",
+              "order_market_price_bound": "0.05",
+              "order_limit_step_size": "0.1",
+              "order_limit_min_size": "0.1",
+              "order_limit_max_size": "1000000",
+              "order_market_step_size": "0.1",
+              "order_market_min_size": "0.1",
+              "order_market_max_size": "300000",
+              "order_min_notional": "10",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.05",
+              "mark_price": "1.31734067",
+              "index_price": "1.31793284",
+              "last_price": "1.3170",
+              "bid1_price": "1.3173",
+              "bid1_size": "569.3",
+              "ask1_price": "1.3175",
+              "ask1_size": "569.2",
+              "funding_rate": "0.0000125000000000000",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "2500"
+            },
+            "ZEC-USD": {
+              "symbol": "ZEC-USD",
+              "name": "Zcash / USD",
+              "base_asset": "ZEC",
+              "status": "trading",
+              "created_at": 0,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 20,
+              "margin_tiers": [
+                {
+                  "max_notional": "20000",
+                  "max_leverage": 40,
+                  "maintenance_margin_rate": "0.01",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "25000",
+                  "max_leverage": 40,
+                  "maintenance_margin_rate": "0.015",
+                  "maintenance_amount": "100.000"
+                },
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 25,
+                  "maintenance_margin_rate": "0.015",
+                  "maintenance_amount": "100.000"
+                },
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 20,
+                  "maintenance_margin_rate": "0.015",
+                  "maintenance_amount": "100.000"
+                },
+                {
+                  "max_notional": "200000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.015",
+                  "maintenance_amount": "100.000"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 15,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "1100.000"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "1100.000"
+                },
+                {
+                  "max_notional": "2000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "6100.000"
+                },
+                {
+                  "max_notional": "5000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "56100.000"
+                },
+                {
+                  "max_notional": "7500000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "306100.000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "306100.000"
+                },
+                {
+                  "max_notional": "20000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.25",
+                  "maintenance_amount": "1806100.000"
+                },
+                {
+                  "max_notional": "40000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.5",
+                  "maintenance_amount": "6806100.000"
+                },
+                {
+                  "max_notional": "100000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.5",
+                  "maintenance_amount": "6806100.000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.1",
+              "order_min_price": "2.9",
+              "order_max_price": "100000",
+              "order_limit_price_bound": "0.05",
+              "order_market_price_bound": "0.05",
+              "order_limit_step_size": "0.001",
+              "order_limit_min_size": "0.001",
+              "order_limit_max_size": "6000",
+              "order_market_step_size": "0.001",
+              "order_market_min_size": "0.001",
+              "order_market_max_size": "2000",
+              "order_min_notional": "10",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.05",
+              "mark_price": "1206.16465118",
+              "index_price": "1206.16440459",
+              "last_price": "1209.3",
+              "bid1_price": "1205.7",
+              "bid1_size": "0.870",
+              "ask1_price": "1206.2",
+              "ask1_size": "0.248",
+              "funding_rate": "0.0000125000000000000",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "2000"
+            },
+            "ZHIPU-USD": {
+              "symbol": "ZHIPU-USD",
+              "name": "Zhipu AI / USD",
+              "base_asset": "ZHIPU",
+              "status": "trading",
+              "created_at": 1787945077585,
+              "base_prec": 8,
+              "quote_prec": 8,
+              "default_leverage": 10,
+              "margin_tiers": [
+                {
+                  "max_notional": "50000",
+                  "max_leverage": 10,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "0"
+                },
+                {
+                  "max_notional": "100000",
+                  "max_leverage": 5,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "0.00"
+                },
+                {
+                  "max_notional": "250000",
+                  "max_leverage": 2,
+                  "maintenance_margin_rate": "0.02",
+                  "maintenance_amount": "0.00"
+                },
+                {
+                  "max_notional": "1000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.025",
+                  "maintenance_amount": "1250.000"
+                },
+                {
+                  "max_notional": "2000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.0333",
+                  "maintenance_amount": "9550.0000"
+                },
+                {
+                  "max_notional": "5000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.05",
+                  "maintenance_amount": "42950.0000"
+                },
+                {
+                  "max_notional": "8000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.1",
+                  "maintenance_amount": "292950.0000"
+                },
+                {
+                  "max_notional": "10000000",
+                  "max_leverage": 1,
+                  "maintenance_margin_rate": "0.125",
+                  "maintenance_amount": "492950.0000"
+                }
+              ],
+              "reduce_only": false,
+              "order_tick_price": "0.01",
+              "order_min_price": "0.01",
+              "order_max_price": "20000",
+              "order_limit_price_bound": "0.03",
+              "order_market_price_bound": "0.03",
+              "order_limit_step_size": "0.01",
+              "order_limit_min_size": "0.01",
+              "order_limit_max_size": "30000",
+              "order_market_step_size": "0.01",
+              "order_market_min_size": "0.01",
+              "order_market_max_size": "2000",
+              "order_min_notional": "5",
+              "liquidation_fee_rate": "0.01",
+              "liquidation_fee_retention_factor": "0.8",
+              "trigger_protect": "0.03",
+              "mark_price": "63.59",
+              "index_price": "63.55678201",
+              "last_price": "63.59",
+              "bid1_price": "63.58",
+              "bid1_size": "1.57",
+              "ask1_price": "63.61",
+              "ask1_size": "1.57",
+              "funding_rate": "0.0001336000327623142",
+              "next_funding_time": 1792753200000,
+              "impact_notional": "1000"
+            }
+          }
+        },
+        "at": 1792753142173,
+        "route": "/v2/markets"
+      },
+      "mark": {
+        "ok": true,
+        "data": {
+          "e": "markPriceUpdate",
+          "E": 1792753140215,
+          "s": "BTC-USD",
+          "p": "81544",
+          "i": "81578.40912769",
+          "r": "0.0000111611737481859",
+          "T": 1792753200000
+        },
+        "at": 1792753142180,
+        "route": "/price/v2/markPrice?symbol=BTC-USD"
+      },
+      "feeTiers": {
+        "ok": true,
+        "data": {
+          "feeTiers": [
+            {
+              "Tier": 0,
+              "MinVolume": 0,
+              "TakerRate": 0.0005,
+              "MakerRate": -0.00005
+            },
+            {
+              "Tier": 1,
+              "MinVolume": 100000,
+              "TakerRate": 0.00045,
+              "MakerRate": -0.00005
+            },
+            {
+              "Tier": 2,
+              "MinVolume": 500000,
+              "TakerRate": 0.0004,
+              "MakerRate": -0.00005
+            },
+            {
+              "Tier": 3,
+              "MinVolume": 2000000,
+              "TakerRate": 0.00035,
+              "MakerRate": -0.00005
+            },
+            {
+              "Tier": 4,
+              "MinVolume": 10000000,
+              "TakerRate": 0.00032,
+              "MakerRate": -0.00005
+            },
+            {
+              "Tier": 5,
+              "MinVolume": 50000000,
+              "TakerRate": 0.0003,
+              "MakerRate": -0.00005
+            },
+            {
+              "Tier": 6,
+              "MinVolume": 200000000,
+              "TakerRate": 0.00028,
+              "MakerRate": -0.00005
+            }
+          ],
+          "makerRebateTiers": [
+            {
+              "tier": 1,
+              "minMakerVolumeShare": 0.05,
+              "makerRate": -0.00008
+            },
+            {
+              "tier": 2,
+              "minMakerVolumeShare": 0.15,
+              "makerRate": -0.0001
+            },
+            {
+              "tier": 3,
+              "minMakerVolumeShare": 0.3,
+              "makerRate": -0.00012
+            }
+          ],
+          "referralTiers": [
+            {
+              "tier": 0,
+              "name": "bronze",
+              "min_referred_volume": 0,
+              "reward_rate": 0.2,
+              "referee_discount_rate": 0.04
+            },
+            {
+              "tier": 1,
+              "name": "silver",
+              "min_referred_volume": 250000,
+              "reward_rate": 0.25,
+              "referee_discount_rate": 0.05
+            },
+            {
+              "tier": 2,
+              "name": "gold",
+              "min_referred_volume": 1000000,
+              "reward_rate": 0.3,
+              "referee_discount_rate": 0.06
+            },
+            {
+              "tier": 3,
+              "name": "platinum",
+              "min_referred_volume": 5000000,
+              "reward_rate": 0.35,
+              "referee_discount_rate": 0.07
+            },
+            {
+              "tier": 4,
+              "name": "diamond",
+              "min_referred_volume": 20000000,
+              "reward_rate": 0.4,
+              "referee_discount_rate": 0.08
+            }
+          ],
+          "stakingFeeDiscountTiers": [
+            {
+              "tier": 1,
+              "minStakedStrike": 5000,
+              "discountRate": 0.05
+            },
+            {
+              "tier": 2,
+              "minStakedStrike": 20000,
+              "discountRate": 0.1
+            },
+            {
+              "tier": 3,
+              "minStakedStrike": 50000,
+              "discountRate": 0.15
+            },
+            {
+              "tier": 4,
+              "minStakedStrike": 100000,
+              "discountRate": 0.2
+            },
+            {
+              "tier": 5,
+              "minStakedStrike": 150000,
+              "discountRate": 0.3
+            },
+            {
+              "tier": 6,
+              "minStakedStrike": 250000,
+              "discountRate": 0.4
+            }
+          ]
+        },
+        "at": 1792753142210,
+        "route": "/v2/fee-tiers"
+      },
+      "depth": {
+        "ok": true,
+        "data": {
+          "lastUpdateId": 1611420244,
+          "E": 1792753142223,
+          "T": 1792753142183,
+          "bids": [
+            [
+              "81546",
+              "0.03678"
+            ],
+            [
+              "81544",
+              "0.06131"
+            ],
+            [
+              "81542",
+              "0.18395"
+            ],
+            [
+              "81540",
+              "0.24527"
+            ],
+            [
+              "81538",
+              "0.30660"
+            ],
+            [
+              "81536",
+              "0.33727"
+            ],
+            [
+              "81534",
+              "0.35567"
+            ],
+            [
+              "81532",
+              "0.36795"
+            ],
+            [
+              "81530",
+              "0.39862"
+            ],
+            [
+              "81528",
+              "0.42930"
+            ],
+            [
+              "81526",
+              "0.49064"
+            ],
+            [
+              "81524",
+              "0.24532"
+            ],
+            [
+              "81522",
+              "0.41787"
+            ],
+            [
+              "81506",
+              "0.11179"
+            ],
+            [
+              "81493",
+              "0.22184"
+            ],
+            [
+              "81490",
+              "0.11130"
+            ],
+            [
+              "81474",
+              "0.10975"
+            ],
+            [
+              "81458",
+              "0.10719"
+            ],
+            [
+              "81442",
+              "0.10370"
+            ],
+            [
+              "81426",
+              "0.09936"
+            ]
+          ],
+          "asks": [
+            [
+              "81547",
+              "0.03678"
+            ],
+            [
+              "81549",
+              "0.06131"
+            ],
+            [
+              "81551",
+              "0.18393"
+            ],
+            [
+              "81553",
+              "0.24523"
+            ],
+            [
+              "81555",
+              "0.30654"
+            ],
+            [
+              "81557",
+              "0.33718"
+            ],
+            [
+              "81559",
+              "0.35557"
+            ],
+            [
+              "81561",
+              "0.36782"
+            ],
+            [
+              "81563",
+              "0.39846"
+            ],
+            [
+              "81565",
+              "0.42910"
+            ],
+            [
+              "81567",
+              "0.49039"
+            ],
+            [
+              "81569",
+              "0.24519"
+            ],
+            [
+              "81571",
+              "0.37897"
+            ],
+            [
+              "81587",
+              "0.07649"
+            ],
+            [
+              "81600",
+              "0.07191"
+            ],
+            [
+              "81603",
+              "0.07995"
+            ],
+            [
+              "81619",
+              "0.08276"
+            ],
+            [
+              "81635",
+              "0.08486"
+            ],
+            [
+              "81651",
+              "0.08617"
+            ],
+            [
+              "81653",
+              "0.52707"
+            ]
+          ]
+        },
+        "at": 1792753142210,
+        "route": "/price/v2/depth?symbol=BTC-USD&limit=20"
+      },
+      "klines": {
+        "ok": true,
+        "data": [
+          [
+            1792749600000,
+            "81537.00000000",
+            "81537.00000000",
+            "81520.38947317",
+            "81520.38947317",
+            "0.00000000",
+            1792749659999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792749660000,
+            "81520.38947317",
+            "81520.38947317",
+            "81464.00000000",
+            "81464.00000000",
+            "0.00000000",
+            1792749719999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792749720000,
+            "81464.00000000",
+            "81510.00000000",
+            "81464.00000000",
+            "81484.00000000",
+            "0.0000100000000000000",
+            1792749779999,
+            "0.8148800000000000000",
+            1,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792749780000,
+            "81484.00000000",
+            "81487.00000000",
+            "81477.23372610",
+            "81485.73082228",
+            "0.0000400000000000000",
+            1792749839999,
+            "3.259360000000000000",
+            2,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792749840000,
+            "81485.73082228",
+            "81494.00000000",
+            "81468.65772025",
+            "81491.00000000",
+            "0.00000000",
+            1792749899999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792749900000,
+            "81491.00000000",
+            "81541.00000000",
+            "81491.00000000",
+            "81541.00000000",
+            "0.00000000",
+            1792749959999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792749960000,
+            "81541.00000000",
+            "81614.44210187",
+            "81541.00000000",
+            "81591.31408422",
+            "0.0000100000000000000",
+            1792750019999,
+            "0.8161300000000000000",
+            1,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792750020000,
+            "81591.31408422",
+            "81592.00000000",
+            "81556.04329980",
+            "81559.00000000",
+            "0.00000000",
+            1792750079999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792750080000,
+            "81559.00000000",
+            "81591.00000000",
+            "81558.43806074",
+            "81591.00000000",
+            "0.0000700000000000000",
+            1792750139999,
+            "5.709690000000000000",
+            1,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792750140000,
+            "81591.00000000",
+            "81611.00000000",
+            "81588.10850816",
+            "81598.15629192",
+            "0.00000000",
+            1792750199999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792750200000,
+            "81598.15629192",
+            "81617.00000000",
+            "81597.42285198",
+            "81617.00000000",
+            "0.0000100000000000000",
+            1792750259999,
+            "0.8160600000000000000",
+            1,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792750260000,
+            "81617.00000000",
+            "81618.00000000",
+            "81611.92646296",
+            "81616.19210502",
+            "0.0001600000000000000",
+            1792750319999,
+            "13.05843000000000000",
+            2,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792750320000,
+            "81616.19210502",
+            "81654.10636087",
+            "81616.19123664",
+            "81653.80434505",
+            "0.0000100000000000000",
+            1792750379999,
+            "0.8164400000000000000",
+            1,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792750380000,
+            "81653.80434505",
+            "81659.52359698",
+            "81649.31032867",
+            "81657.51006889",
+            "0.0002100000000000000",
+            1792750439999,
+            "17.14608000000000000",
+            1,
+            "0.0002100000000000000",
+            "17.14608000000000000",
+            "0"
+          ],
+          [
+            1792750440000,
+            "81657.51006889",
+            "81667.00000000",
+            "81657.51006889",
+            "81667.00000000",
+            "0.0106900000000000000",
+            1792750499999,
+            "872.9553400000000000",
+            5,
+            "0.0104700000000000000",
+            "854.9905800000000000",
+            "0"
+          ],
+          [
+            1792750500000,
+            "81667.00000000",
+            "81679.53161496",
+            "81661.07306766",
+            "81661.07740967",
+            "0.0004300000000000000",
+            1792750559999,
+            "35.11905000000000000",
+            4,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792750560000,
+            "81661.07740967",
+            "81671.00000000",
+            "81641.00000000",
+            "81669.00000000",
+            "0.0016900000000000000",
+            1792750619999,
+            "137.9871700000000000",
+            4,
+            "0.0016800000000000000",
+            "137.1705400000000000",
+            "0"
+          ],
+          [
+            1792750620000,
+            "81669.00000000",
+            "81671.00000000",
+            "81657.00000000",
+            "81660.49020213",
+            "0.00000000",
+            1792750679999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792750680000,
+            "81660.49020213",
+            "81676.91816841",
+            "81660.40854870",
+            "81673.97584922",
+            "0.00000000",
+            1792750739999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792750740000,
+            "81673.97584922",
+            "81678.26226209",
+            "81672.00000000",
+            "81672.00866627",
+            "0.00000000",
+            1792750799999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792750800000,
+            "81672.00866627",
+            "81705.59036298",
+            "81672.00000000",
+            "81703.44841850",
+            "0.0000300000000000000",
+            1792750859999,
+            "2.450700000000000000",
+            2,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792750860000,
+            "81703.44841850",
+            "81712.22613346",
+            "81677.00000000",
+            "81680.00000000",
+            "0.0035300000000000000",
+            1792750919999,
+            "288.4117300000000000",
+            3,
+            "0.0034800000000000000",
+            "284.3264400000000000",
+            "0"
+          ],
+          [
+            1792750920000,
+            "81680.00000000",
+            "81681.00000000",
+            "81658.00000000",
+            "81659.00000000",
+            "0.00000000",
+            1792750979999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792750980000,
+            "81659.00000000",
+            "81659.01718905",
+            "81626.00000000",
+            "81640.68516414",
+            "0.0001300000000000000",
+            1792751039999,
+            "10.61307000000000000",
+            2,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792751040000,
+            "81640.68516414",
+            "81662.00000000",
+            "81638.04127008",
+            "81646.63498866",
+            "0.0000300000000000000",
+            1792751099999,
+            "2.449600000000000000",
+            2,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792751100000,
+            "81646.63498866",
+            "81646.70804294",
+            "81621.95265178",
+            "81634.00000000",
+            "0.0000100000000000000",
+            1792751159999,
+            "0.8163400000000000000",
+            1,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792751160000,
+            "81634.00000000",
+            "81634.00000000",
+            "81621.00000000",
+            "81634.00000000",
+            "0.00000000",
+            1792751219999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792751220000,
+            "81634.00000000",
+            "81634.00000000",
+            "81608.00000000",
+            "81608.00000000",
+            "0.00000000",
+            1792751279999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792751280000,
+            "81608.00000000",
+            "81610.00000000",
+            "81601.00000000",
+            "81603.04971865",
+            "0.0001200000000000000",
+            1792751339999,
+            "9.793200000000000000",
+            2,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792751340000,
+            "81603.04971865",
+            "81603.26383460",
+            "81601.00000000",
+            "81601.00000000",
+            "0.0000400000000000000",
+            1792751399999,
+            "3.264040000000000000",
+            3,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792751400000,
+            "81601.00000000",
+            "81601.00000000",
+            "81563.31019174",
+            "81569.12443679",
+            "0.0092100000000000000",
+            1792751459999,
+            "751.5353800000000000",
+            5,
+            "0.00919",
+            "749.90400",
+            "0"
+          ],
+          [
+            1792751460000,
+            "81569.12443679",
+            "81569.48077514",
+            "81548.55023258",
+            "81550.00000000",
+            "0.00000000",
+            1792751519999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792751520000,
+            "81550.00000000",
+            "81592.00000000",
+            "81550.00000000",
+            "81592.00000000",
+            "0.0000800000000000000",
+            1792751579999,
+            "6.525740000000000000",
+            3,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792751580000,
+            "81592.00000000",
+            "81600.00000000",
+            "81576.00000000",
+            "81576.31583751",
+            "0.0000100000000000000",
+            1792751639999,
+            "0.8160000000000000000",
+            1,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792751640000,
+            "81576.31583751",
+            "81576.69128677",
+            "81559.24558521",
+            "81560.00000000",
+            "0.00000000",
+            1792751699999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792751700000,
+            "81560.00000000",
+            "81588.00000000",
+            "81547.98540435",
+            "81587.00000000",
+            "0.0003300000000000000",
+            1792751759999,
+            "26.91135000000000000",
+            4,
+            "0.0003000000000000000",
+            "24.46410000000000000",
+            "0"
+          ],
+          [
+            1792751760000,
+            "81587.00000000",
+            "81601.40293161",
+            "81587.00000000",
+            "81601.23700576",
+            "0.00000000",
+            1792751819999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792751820000,
+            "81601.23700576",
+            "81618.71081792",
+            "81598.08360879",
+            "81613.26034863",
+            "0.0000500000000000000",
+            1792751879999,
+            "4.080800000000000000",
+            2,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792751880000,
+            "81613.26034863",
+            "81613.51072046",
+            "81572.02229915",
+            "81574.00000000",
+            "0.0008400000000000000",
+            1792751939999,
+            "68.53588000000000000",
+            3,
+            "0.0001400000000000000",
+            "11.42008000000000000",
+            "0"
+          ],
+          [
+            1792751940000,
+            "81574.00000000",
+            "81597.69730204",
+            "81569.00000000",
+            "81593.13877655",
+            "0.0000100000000000000",
+            1792751999999,
+            "0.8158600000000000000",
+            1,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792752000000,
+            "81593.13877655",
+            "81598.96880790",
+            "81592.66789414",
+            "81593.51418409",
+            "0.00000000",
+            1792752059999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792752060000,
+            "81593.51418409",
+            "81593.70740099",
+            "81569.33665674",
+            "81569.33665674",
+            "0.0001500000000000000",
+            1792752119999,
+            "12.23595000000000000",
+            1,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792752120000,
+            "81569.33665674",
+            "81573.00000000",
+            "81555.00000000",
+            "81561.00000000",
+            "0.0004600000000000000",
+            1792752179999,
+            "37.51530000000000000",
+            1,
+            "0.0004600000000000000",
+            "37.51530000000000000",
+            "0"
+          ],
+          [
+            1792752180000,
+            "81561.00000000",
+            "81572.00000000",
+            "81561.00000000",
+            "81565.11233791",
+            "0.00000000",
+            1792752239999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792752240000,
+            "81565.11233791",
+            "81571.00000000",
+            "81561.00000000",
+            "81561.00000000",
+            "0.00000000",
+            1792752299999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792752300000,
+            "81561.00000000",
+            "81580.00000000",
+            "81551.08508420",
+            "81572.06061903",
+            "0.0002400000000000000",
+            1792752359999,
+            "19.57217000000000000",
+            4,
+            "0.0002000000000000000",
+            "16.30960000000000000",
+            "0"
+          ],
+          [
+            1792752360000,
+            "81572.06061903",
+            "81572.06061903",
+            "81560.00000000",
+            "81562.00000000",
+            "0.00000000",
+            1792752419999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792752420000,
+            "81562.00000000",
+            "81566.00000000",
+            "81548.07941793",
+            "81559.00000000",
+            "0.0001600000000000000",
+            1792752479999,
+            "13.04768000000000000",
+            1,
+            "0.0001600000000000000",
+            "13.04768000000000000",
+            "0"
+          ],
+          [
+            1792752480000,
+            "81559.00000000",
+            "81588.00000000",
+            "81557.36416582",
+            "81587.42305940",
+            "0.00000000",
+            1792752539999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792752540000,
+            "81587.42305940",
+            "81618.22049987",
+            "81580.68581020",
+            "81618.22049987",
+            "0.0000400000000000000",
+            1792752599999,
+            "3.264040000000000000",
+            1,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792752600000,
+            "81618.22049987",
+            "81621.00000000",
+            "81600.00000000",
+            "81602.07076107",
+            "0.00000000",
+            1792752659999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792752660000,
+            "81602.07076107",
+            "81614.00000000",
+            "81583.00000000",
+            "81583.00000000",
+            "0.00000000",
+            1792752719999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792752720000,
+            "81583.00000000",
+            "81583.00000000",
+            "81567.00000000",
+            "81567.00000000",
+            "0.00000000",
+            1792752779999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792752780000,
+            "81567.00000000",
+            "81578.00000000",
+            "81538.30571422",
+            "81542.18787810",
+            "0.00000000",
+            1792752839999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792752840000,
+            "81542.18787810",
+            "81569.00000000",
+            "81542.18787810",
+            "81569.00000000",
+            "0.0000200000000000000",
+            1792752899999,
+            "1.631310000000000000",
+            2,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792752900000,
+            "81569.00000000",
+            "81573.53782651",
+            "81567.00000000",
+            "81568.28501378",
+            "0.00000000",
+            1792752959999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792752960000,
+            "81568.28501378",
+            "81568.28501378",
+            "81557.00000000",
+            "81562.95820923",
+            "0.00000000",
+            1792753019999,
+            "0.00000000",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792753020000,
+            "81562.95820923",
+            "81576.00000000",
+            "81554.00000000",
+            "81554.00000000",
+            "0.0000400000000000000",
+            1792753079999,
+            "3.263040000000000000",
+            1,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792753080000,
+            "81554",
+            "81554",
+            "81535.94919572",
+            "81544",
+            "0",
+            1792753139999,
+            "0",
+            0,
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            1792753140000,
+            "81544",
+            "81544",
+            "81544",
+            "81544",
+            "0",
+            1792753199999,
+            "0",
+            0,
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "at": 1792753142278,
+        "route": "/price/v2/klines?symbol=BTC-USD&interval=1m&limit=60&priceType=mark"
+      }
+    },
+    "collectedAt": 1792753142278,
+    "serverNow": 1792753142347.5
+  },
+  "policy": {
+    "riskEquityPercent": 1,
+    "marginEquityPercent": 25,
+    "maxLeverage": 10,
+    "extraRiskBufferBps": 10
+  },
+  "limitations": [
+    "No trading writes",
+    "Future prices, fees and liquidity unknown",
+    "Stop and liquidation fills not guaranteed",
+    "Effective fees derived from official account fields are estimates"
+  ]
+}
