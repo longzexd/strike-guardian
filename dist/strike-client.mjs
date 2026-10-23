@@ -34,7 +34,7 @@ export class StrikeClient{
  }
  async syncClock(){const start=this.clock();const data=await this.request('/v2/time');const end=this.clock();if(!Number.isFinite(data.serverTime))throw Error('Missing official serverTime');this.offset=data.serverTime-(start+end)/2;this.syncedAt=end;return data}
  async collect(symbol){if(!/^[A-Z0-9]{1,15}-USD$/.test(symbol))throw Error('Invalid symbol');const generation=this.generation;
- const packets={},jobs=[['markets','/v2/markets',false],['mark',`/price/v2/markPrice?symbol=${symbol}`,false],['depth',`/price/v2/depth?symbol=${symbol}&limit=20`,false],['klines',`/price/v2/klines?symbol=${symbol}&interval=1m&limit=60&priceType=mark`,false],['feeTiers','/v2/fee-tiers',false]];
+ const packets={},jobs=[['markets','/v2/markets',false],['mark',`/price/v2/markPrice?symbol=${symbol}`,false],['depth',`/price/v2/depth?symbol=${symbol}&limit=1000`,false],['klines',`/price/v2/klines?symbol=${symbol}&interval=1m&limit=60&priceType=mark`,false],['feeTiers','/v2/fee-tiers',false],['fundingHistory',`/stat/v1/stats/coin/history/funding?symbol=${symbol}&days=7`,false]];
  try{await this.syncClock();packets.time={ok:true,data:{serverTime:this.now()},at:this.clock(),route:'/v2/time'}}catch(e){packets.time={ok:false,error:e.message,route:'/v2/time'}}
  if(this.connected)for(const [name,route]of Object.entries(PRIVATE_ROUTES))jobs.push([name,route,true]);else for(const [name,route]of Object.entries(PRIVATE_ROUTES))packets[name]={ok:false,error:'需要 API Wallet 授权',route};
  await Promise.all(jobs.map(async([name,route,priv])=>{try{const data=await this.request(route,priv);packets[name]={ok:true,data,at:this.clock(),route}}catch(e){packets[name]={ok:false,error:e.message,route}}}));

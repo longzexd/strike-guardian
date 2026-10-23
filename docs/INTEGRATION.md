@@ -34,7 +34,7 @@ npm start
 | GET /v2/time | 官方服务器校时、签名时间、行情过期判断 | 公共 |
 | GET /v2/markets | 市场状态、数量与价格网格、保证金阶梯、官方价格保护边界 | 公共 |
 | GET /price/v2/markPrice?symbol=… | 真实标记价、当前资金费率、下一次资金费结算时间 | 公共 |
-| GET /price/v2/depth?symbol=…&limit=20 | 真实买卖各 20 档，开仓 VWAP、立即反向退出估算、可见深度 | 公共 |
+| GET /price/v2/depth?symbol=…&limit=1000 | 真实买卖每侧最多 1,000 档，开仓 VWAP、立即反向退出估算、可见深度 | 公共 |
 | GET /price/v2/klines?symbol=…&interval=1m&limit=60&priceType=mark | 最近 60 根真实标记价 K 线 | 公共 |
 | GET /v2/fee-tiers | 展示并核验公开费率阶梯；不代替个人实际费率 | 公共 |
 | GET /v2/account | 钱包余额、未实现盈亏、可用余额、真实账户 ID | API Wallet |
@@ -110,11 +110,21 @@ npm test
 npm run test:public
 ```
 
-68 项测试覆盖真实数据规范化、无默认费率、有效市场模式、杠杆一致性、数据过期、账户 ID 关联、持仓/挂单冲突、资金费时长、推荐随数量重算、订单簿深度、跳价、官方签名格式、浏览器与本机 Ed25519 密钥验证、只读路由白名单、拒绝所有交易写入，RFQ 另有严格白名单、网络绑定，以及宿主认证适配。测试夹具只在 `tests/` 中，不供生产 UI 或代理返回。
+86 项测试覆盖真实数据规范化、无默认费率、有效市场模式、杠杆一致性、数据过期、账户 ID 关联、持仓/挂单冲突、资金费时长、推荐随数量重算、订单簿深度、跳价、官方签名格式、浏览器与本机 Ed25519 密钥验证、只读路由白名单、拒绝所有交易写入，RFQ 另有严格白名单、网络绑定，以及宿主认证适配。测试夹具只在 `tests/` 中，不供生产 UI 或代理返回。
 
-6 个公共接口已现场读取验证；真实账户端到端验证等待用户在应用中授权。来源与边界见 `API-VERIFICATION.md`，约 90 秒脚本见 `DEMO.md`。
+7 个公共接口已现场读取验证；真实账户端到端验证等待用户在应用中授权。来源与边界见 `API-VERIFICATION.md`，约 90 秒脚本见 `DEMO.md`。
 
 
 界面默认英文，右上角可切换中文，语言偏好保存在 guardian.language。原始 API 数据和导出保持源格式；密钥不写入该存储。使用截图与最新验证记录见仓库根目录 README.md / README.zh-CN.md。
 
 RFQ 自动化与完整边界见 README.zh-CN.md 第 12 节；createStrikeRiskGate 宿主适配器仍只读取和评估，不会自动获得 RFQ 写权限。独立 UI 的 RFQ 必须用户手动申请或显式开启自动申请。
+
+## Cardano CIP-30 / Builder Connect
+
+连接实现见 dist/cardano-wallet.mjs 与 dist/cardano-ui.mjs。参考 CoindropV2 的 registry/alias 方式，严格匹配用户所选 provider，不静默换钱包。getNetworkId 与原始支付地址的 network nibble 均验证。使用 change address，不依赖余额和 UTxO；拒绝无效、reward 与不支持的地址类型。
+
+仅两条官方授权 POST：/auth/builder/request-signature（address、chain=cardano、code、fee_share_bps=0、public_key）与 /auth/builder/verify-signature（nonce、wallet_signature）。CIP-30 signData 的 payload 是官方原文 UTF-8 转 hex；提交 signature:key。Ed25519 私钥不可导出，仅内存；验证返回的公钥、builder code、0费率及有效期后才启用账户请求。无资金交易。
+
+项目没有配置有效 Builder Code。先让用户连接钱包、确认地址/网络；这不能读取 Strike 账户。用户可另行导入其已注册 API Wallet。授权会撤销同账户同 builder code 的旧 API Wallet，必须展示官方消息及这个影响。
+
+新增深度 /price/v2/depth?limit=1000、七天真实 funding history、私有 TWAP/Grid。当前请求每10秒轮询；统计 funding 有独立5分钟读取有效期，不驱动实时准入。前20档只是对照，不当成全部市场。执行范围与官方保护价格相交；新增风险阶段依据隔离/全仓真实保证金作用范围。

@@ -3,128 +3,203 @@
 > node scripts/smoke-public.mjs
 
 {
-  "checkedAt": "2026-10-23T11:29:11.925Z",
+  "checkedAt": "2026-10-23T12:15:27.450Z",
   "source": "https://api.strikefinance.org",
-  "publicEndpoints": "6/6 verified",
+  "publicEndpoints": "7/7 verified",
   "accountEndpoints": "Not authorized — complete assessment correctly blocked",
-  "mark": "81516",
+  "mark": "81401",
   "plan": {
     "symbol": "BTC-USD",
     "side": "long",
-    "quantity": "0.12267000",
+    "quantity": "0.12284000",
     "leverage": "10",
     "holdingHours": "8",
-    "stop": "79885.00000000",
+    "stop": "79772.00000000",
     "stopMode": "price"
   },
   "analysis": {
+    "execution": {
+      "maxImpactBps": 20,
+      "officialBoundBps": 500,
+      "bid": 81400,
+      "ask": 81402,
+      "spread": 2,
+      "spreadBps": 0.24569722730678986,
+      "buyCapacity": {
+        "quantity": 2.94111,
+        "notional": 239538.42223
+      },
+      "sellCapacity": {
+        "quantity": 4.85911,
+        "notional": 395320.72557
+      },
+      "buyCeiling": 81564.804,
+      "sellFloor": 81237.2,
+      "observed": {
+        "bids": 122,
+        "asks": 124,
+        "at": 1792757727176,
+        "requestedLimit": 1000,
+        "possiblyTruncated": false
+      },
+      "opening": {
+        "complete": true,
+        "filled": 0.12284,
+        "unfilled": 0,
+        "vwap": 81402,
+        "worst": 81402,
+        "cost": 9999.42168
+      },
+      "closing": {
+        "complete": true,
+        "filled": 0.12284,
+        "unfilled": 0,
+        "vwap": 81381.99967437,
+        "worst": 81380,
+        "cost": 9996.96484
+      }
+    },
+    "top20": {
+      "complete": true,
+      "filled": 0.12284,
+      "unfilled": 0,
+      "vwap": 81402,
+      "worst": 81402,
+      "cost": 9999.42168
+    },
+    "entryImpactBps": 0,
+    "spreadBps": 0.24569722730678986,
     "opening": {
       "complete": true,
-      "filled": 0.12267,
+      "filled": 0.12284,
       "unfilled": 0,
-      "vwap": 81520.10010597,
-      "worst": 81522,
-      "cost": 10000.07068
+      "vwap": 81402,
+      "worst": 81402,
+      "cost": 9999.42168
     },
     "closing": {
       "complete": true,
-      "filled": 0.12267,
+      "filled": 0.12284,
       "unfilled": 0,
-      "vwap": 81515.89989402,
-      "worst": 81514,
-      "cost": 9999.55544
+      "vwap": 81381.99967437,
+      "worst": 81380,
+      "cost": 9996.96484
     },
     "depthBands": [
       {
         "band": 0.001,
-        "bid": 363341.58918000007,
-        "ask": 335240.75249
+        "bid": 353398.1437599999,
+        "ask": 153886.05518999996
       },
       {
         "band": 0.005,
-        "bid": 381031.3566800001,
-        "ask": 391113.56499
+        "bid": 449213.48660999996,
+        "ask": 303374.7153299999
       },
       {
         "band": 0.01,
-        "bid": 381031.3566800001,
-        "ask": 391113.56499
+        "bid": 450702.46005000005,
+        "ask": 322915.8831199999
       }
     ],
     "funding": {
       "periods": 8,
       "rate": 0.0000125,
-      "next": 1792756800000,
-      "estimate": -0.9999567720000001,
+      "next": 1792760400000,
+      "estimate": -0.9999298840000002,
       "hours": 8
     },
-    "entry": 81520.10010597,
-    "notional": 10000.07067999934,
-    "margin": 1000.0070679999341,
-    "liquidation": 73662.74105961,
-    "stopLoss": 200.5777299993407,
+    "entry": 81402,
+    "notional": 9999.421680000001,
+    "margin": 999.9421680000002,
+    "liquidation": 73556.02409638,
+    "stopLoss": 200.22920000000002,
     "stopFeesKnown": false,
     "openingFee": null,
-    "slippageBps": 0.5029817422354572,
+    "slippageBps": 0.12284861365339493,
     "priceBoundExceeded": false,
-    "roundTripSpread": -0.5152399999077599,
+    "roundTripSpread": -2.4568400003888256,
     "scenarios": [
       {
         "change": -20,
-        "price": 65212.8,
-        "gross": -2000.4165039993404,
-        "marginBalance": -1000.4094359994064,
-        "maintenance": 31.998616704,
+        "price": 65120.8,
+        "gross": -1999.9826079999998,
+        "marginBalance": -1000.0404399999996,
+        "maintenance": 31.997756288000005,
+        "risk": {
+          "stage": "bankrupt",
+          "ratio": null
+        },
         "liquidatable": true,
         "exitFee": null,
         "estimatedNet": null
       },
       {
         "change": -10,
-        "price": 73364.40000000001,
-        "gross": -1000.4597319993396,
-        "marginBalance": -0.45266399940555857,
-        "maintenance": 35.998443792,
+        "price": 73260.90000000001,
+        "gross": -1000.052723999999,
+        "marginBalance": -0.11055599999883725,
+        "maintenance": 35.997475824000006,
+        "risk": {
+          "stage": "bankrupt",
+          "ratio": null
+        },
         "liquidatable": true,
         "exitFee": null,
         "estimatedNet": null
       },
       {
         "change": -5,
-        "price": 77440.2,
-        "gross": -500.48134599934104,
-        "marginBalance": 499.525722000593,
-        "maintenance": 37.998357336000005,
+        "price": 77330.95,
+        "gross": -500.0877820000004,
+        "marginBalance": 499.85438599999975,
+        "maintenance": 37.997335592000006,
+        "risk": {
+          "stage": "healthy",
+          "ratio": 0.07601680940737014
+        },
         "liquidatable": false,
         "exitFee": null,
         "estimatedNet": null
       },
       {
         "change": 5,
-        "price": 85591.8,
-        "gross": 499.47542600065964,
-        "marginBalance": 1499.4824940005938,
-        "maintenance": 41.998184424,
+        "price": 85471.05,
+        "gross": 499.84210200000035,
+        "marginBalance": 1499.7842700000006,
+        "maintenance": 41.997055128,
+        "risk": {
+          "stage": "healthy",
+          "ratio": 0.02800206400884574
+        },
         "liquidatable": false,
         "exitFee": null,
         "estimatedNet": null
       },
       {
         "change": 10,
-        "price": 89667.6,
-        "gross": 999.45381200066,
-        "marginBalance": 1999.460880000594,
-        "maintenance": 43.998097968,
+        "price": 89541.1,
+        "gross": 999.8070440000007,
+        "marginBalance": 1999.7492120000009,
+        "maintenance": 43.996914896,
+        "risk": {
+          "stage": "healthy",
+          "ratio": 0.022001216268512765
+        },
         "liquidatable": false,
         "exitFee": null,
         "estimatedNet": null
       },
       {
         "change": 20,
-        "price": 97819.2,
-        "gross": 1999.410584000659,
-        "marginBalance": 2999.417652000593,
-        "maintenance": 47.997925056,
+        "price": 97681.2,
+        "gross": 1999.7369279999998,
+        "marginBalance": 2999.679096,
+        "maintenance": 47.996634432,
+        "risk": {
+          "stage": "healthy",
+          "ratio": 0.016000589695078504
+        },
         "liquidatable": false,
         "exitFee": null,
         "estimatedNet": null

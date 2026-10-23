@@ -14,7 +14,7 @@ export function installRfqUI({document,getContext}){
  function fail(e){const labels={RFQ_PAUSED:'Strike 当前暂停 RFQ，未获得流动性。',RFQ_RATE_LIMITED:'Strike 限制申请频率，请稍后重试。',RFQ_MUTATION_INDETERMINATE:'申请结果尚未确定；重试会使用相同申请编号，避免重复。',RFQ_REDIS_UNAVAILABLE:'Strike RFQ 服务暂不可用，请稍后重试。',RFQ_IDEMPOTENCY_CONFLICT:'申请编号冲突，已停止自动申请。'};
  note=(labels[e.code]??e.message)+(e.retryAfter?' Retry-After: '+e.retryAfter+'s':'');$('rfqAuto').checked=false;render();}
  async function create(automatic=false){if(!eligible()){note='需授权账户和新鲜市场数据，才能申请真实流动性。';render();return;}
- const c=getContext();note='正在申请非约束性流动性；不会下单。';
+ const c=getContext();if(!session.pending||session.record)c.captureBaseline?.();note='正在申请非约束性流动性；不会下单。';
  const promise=session.create(c.market.market,document.getElementById('quantity').value,{automatic});render();
  try{const r=await promise;if(r){note='RFQ 已发送；正在等待做市商，随后重新评估订单簿。';pollAt=Date.now();await c.reload();}render();}catch(e){fail(e)}}
  $('rfqRequest').onclick=()=>create(false);

@@ -27,8 +27,8 @@ Verification date: **23 October 2026**. Screenshots below are actual browser cap
 | Area | Evidence | Status |
 |---|---|---|
 | Syntax / modules | `npm run check` | Passed |
-| Deterministic engine, signatures, restricted gateway, localization | `npm test` | **68 / 68 passed** |
-| Public Strike APIs | `npm run test:public` | **6 / 6 verified live** |
+| Deterministic engine, signatures, restricted gateway, localization | `npm test` | **86 / 86 passed** |
+| Public Strike APIs | `npm run test:public` | **7 / 7 verified live** |
 | Browser workflow | Screenshots and [record](docs/verification/browser-checks.json) | Live public-data flows exercised |
 | Real private account | Requires the user's registered API Wallet | **Not yet verified end to end** |
 | Trading execution | Order / transfer write routes are prohibited | Not implemented |
@@ -78,7 +78,7 @@ Expand **Order-book depth & execution quality**. Guardian walks asks for a long 
 
 ![Order-book execution and reverse-exit estimates](docs/screenshots/02-order-book.jpg)
 
-Depth bands show visible bid / ask notional around mark. **Only the returned 20 levels per side are covered.** A successful current-book estimate cannot guarantee future liquidity, stop execution or actual fills. Round-trip spread PnL excludes trading fees and funding.
+Depth bands show visible bid / ask notional around mark. **Guardian now requests up to 1,000 levels per side; only actual returned levels count. The execution window additionally intersects your impact limit with official mark protection.** A successful current-book estimate cannot guarantee future liquidity, stop execution or actual fills. Round-trip spread PnL excludes trading fees and funding.
 
 ### 4. Detect a plan larger than visible depth
 
@@ -150,7 +150,7 @@ After connecting, verify account, symbols, positions, open orders and portfolio 
 
 Open **Data sources** to see each endpoint's status and last read time. Click **View** to inspect its official response. Then click **Export assessment JSON**. The downloaded JSON and in-page **Export preview** use the same serialized data.
 
-**Tested:** all six public sources were loaded; seven private sources explicitly required authorization. The export contained `mode: READ_ONLY_REAL_DATA`, `uiLanguage: en`, `accountId: null`, `assessment.ok: false` and a valid public-market analysis. No private account or secret was included in the published evidence.
+**Tested:** all seven public sources were loaded; nine private sources explicitly required authorization. The export contained `mode: READ_ONLY_REAL_DATA`, `uiLanguage: en`, `accountId: null`, `assessment.ok: false` and a valid public-market analysis. No private account or secret was included in the published evidence.
 
 ![Public success versus private authorization requirements](docs/screenshots/07-data-sources.jpg)
 
@@ -193,7 +193,7 @@ Official mainnet origin: `https://api.strikefinance.org`. Testnet read origin: `
 | `/v2/time` | Official clock and signing time | Public |
 | `/v2/markets` | Status, grids, margin tiers, price protection | Public |
 | `/price/v2/markPrice?symbol=…` | Mark, funding rate, next settlement | Public |
-| `/price/v2/depth?symbol=…&limit=20` | Entry / reverse exit / visible depth | Public |
+| `/price/v2/depth?symbol=…&limit=1000` | Entry / reverse exit / visible depth | Public |
 | `/price/v2/klines?symbol=…&interval=1m&limit=60&priceType=mark` | Historical mark-price context | Public |
 | `/v2/fee-tiers` | Public fee tiers, not a substitute for personal fees | Public |
 | `/v2/account` | Balances, equity components, account ID | API Wallet |
@@ -234,3 +234,46 @@ Key files: `dist/risk.mjs` (fixed-point engine), `dist/market-analysis.mjs` (boo
 [Official builder reference](https://github.com/strike-finance/strike-builder-reference) · [API verification details](API-VERIFICATION.md) · [MIT license](LICENSE)
 
 Earlier screenshots illustrate unchanged workflows; fee wording and RFQ screenshots reflect this update. The captured public-only export predates RFQ and retains its original READ_ONLY_REAL_DATA mode. New exports use NO_TRADING_REAL_DATA_RFQ_OPTIONAL.
+
+## Latest tested update: deep liquidity and Cardano wallets
+
+The new screenshots below were captured by operating the user's Chrome against live Strike public data on 23 October 2026. Older screenshots above record earlier observations.
+
+### Connect a Cardano wallet
+
+Click **Connect account**, choose an installed CIP-30 wallet, and approve the extension's address/network access. **Refresh wallet detection** rescans extensions. Nami, Eternl/ccvault, Lace, Flint, Yoroi, Typhon, NuFi, Gero, VESPR, Begin, Tokeo and dynamically discovered providers are listed. Missing extensions are disabled. No balance or UTxO is needed to connect an empty wallet. Network mismatch blocks connection.
+
+Wallet connection is distinct from Strike authorization. To authorize via the official Builder Connect API, enter the application's registered active Builder Code, request the official challenge, review it, acknowledge its effects, then personally sign it in the wallet. The fee cap is 0 bps, no referral is sent. This creates a browser-memory API Wallet and **revokes previous API Wallets for the same account and Builder Code**. Guardian does not send transactions. Existing registered API Wallet import/local signing remains available without Builder Code.
+
+**Current limit:** this project has no active Builder Code configured. Wallet detection and the chooser were exercised in real Chrome; extension approval, real CIP-30 signature, private-account reads and RFQ remain pending user authorization. Mocked protocol tests do not prove live authorization. Never paste a funding-wallet key or recovery phrase.
+
+![Actual Chrome wallet chooser](docs/screenshots/30-chrome-cardano-picker-en.jpg)
+
+### Check deeper liquidity without counting far-away orders
+
+Set a plan and **Maximum book-walking impact** (default 20 bps). Compare raw full depth, first 20 levels, and executable price-window depth. A live $410,000 long was unsupported by the first 20 asks but covered by deeper visible asks inside the selected limits. This is a snapshot observation, not a fill promise.
+
+![First 20 levels versus deeper live depth](docs/screenshots/27-chrome-20-vs-deep.jpg)
+
+Set the impact limit to 0 bps: even a $10,000 plan exceeded the roughly $3,000 available at the best ask in the captured snapshot. Far-away liquidity did not make it pass.
+
+![Actual price-window shortage](docs/screenshots/21-chrome-price-limits.jpg)
+
+### Compare snapshots and execution plans
+
+Click **Capture depth baseline**, then **Refresh & compare** after a newer official snapshot. Network, direction, quantity and impact limit must match. Before an RFQ, a baseline is captured automatically; differences show observed change only, never liquidity causally attributed to the RFQ. IOC/FOK estimates remain plans; TWAP slice counts are illustrative, no strategy is created.
+
+![Same-plan live snapshot comparison](docs/screenshots/22-chrome-snapshot-comparison.jpg)
+
+### Inspect actual historical funding and existing strategies
+
+The new historical table uses seven days of official hourly funding, with contiguous 1/8/24-hour windows, constant planned notional and observed median/P95/worst cost. Positive means cost, negative means income. These are historical observations, not future probabilities or forecasts.
+
+![Real historical funding windows](docs/screenshots/23-chrome-funding-history.jpg)
+
+TWAP and Grid endpoints must return successful fresh account-bound data; missing authorization never means no strategies. Same-market active strategies conservatively block new exposure. Existing margin profiles use official position maintenance margins, with 70% warning, 90% reduce-only, 100% liquidation-condition thresholds and separate bankruptcy checks.
+
+![Unknown strategy state remains unknown](docs/screenshots/24-chrome-strategy-guard.jpg)
+![Stress margin warning](docs/screenshots/28-chrome-margin-stage.jpg)
+
+New official sources: public /stat/v1/stats/coin/history/funding?symbol=BTC-USD&days=7; private /v2/algo/twap and /v2/grid/bot; Cardano authorization POST /auth/builder/request-signature and POST /auth/builder/verify-signature. Authorization is separate from the read/RFQ gateway. No order or transfer routes were added.

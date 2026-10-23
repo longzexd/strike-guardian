@@ -1,12 +1,13 @@
 // Account reads and explicitly scoped nonbinding RFQs only. No trading writes.
 import {validateRfq} from './rfq.mjs';
 export const ORIGINS=Object.freeze({mainnet:'https://api.strikefinance.org',testnet:'https://api-v2-testnet.strikefinance.org'});
-export const PRIVATE_ROUTES=Object.freeze({account:'/v2/account',symbols:'/v2/symbols',positions:'/v2/positions',openOrders:'/v2/openOrders',portfolio:'/v2/portfolio',orderHistory:'/v2/history/order?limit=20',fillHistory:'/v2/history/fill?limit=20'});
+export const PRIVATE_ROUTES=Object.freeze({account:'/v2/account',symbols:'/v2/symbols',positions:'/v2/positions',openOrders:'/v2/openOrders',portfolio:'/v2/portfolio',orderHistory:'/v2/history/order?limit=20',fillHistory:'/v2/history/fill?limit=20',twap:'/v2/algo/twap',grid:'/v2/grid/bot'});
 export function assertReadRoute(route,isPrivate){
  if(typeof route!=='string')throw Error('Invalid route');
  if(isPrivate){if(!Object.values(PRIVATE_ROUTES).includes(route))throw Error('Private route not allowed');return route}
+ if(/^\/stat\/v1\/stats\/coin\/history\/funding\?symbol=[A-Z0-9]{1,15}-USD&days=7$/.test(route))return route;
  if(['/v2/time','/v2/markets','/v2/fee-tiers'].includes(route))return route;
- if(/^\/price\/v2\/markPrice\?symbol=[A-Z0-9]{1,15}-USD$/.test(route)||/^\/price\/v2\/depth\?symbol=[A-Z0-9]{1,15}-USD&limit=20$/.test(route)||/^\/price\/v2\/klines\?symbol=[A-Z0-9]{1,15}-USD&interval=1m&limit=60&priceType=mark$/.test(route))return route;
+ if(/^\/price\/v2\/markPrice\?symbol=[A-Z0-9]{1,15}-USD$/.test(route)||/^\/price\/v2\/depth\?symbol=[A-Z0-9]{1,15}-USD&limit=(?:20|1000)$/.test(route)||/^\/price\/v2\/klines\?symbol=[A-Z0-9]{1,15}-USD&interval=1m&limit=60&priceType=mark$/.test(route))return route;
  throw Error('Public route not allowed');
 }
 export const hex=bytes=>Array.from(new Uint8Array(bytes),b=>b.toString(16).padStart(2,'0')).join('');

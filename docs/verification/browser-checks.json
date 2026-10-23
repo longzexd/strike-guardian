@@ -51,6 +51,26 @@
       "action": "Live authenticated RFQ",
       "result": "NOT VERIFIED",
       "evidence": "No API Wallet connected; no request sent to market makers"
+    },
+    {
+      "action": "User Chrome deep book, price window, snapshots, historical funding, strategy guard and Cardano picker",
+      "result": "PASS_PUBLIC_UI",
+      "evidence": [
+        "20-chrome-depth-en.jpg",
+        "21-chrome-price-limits.jpg",
+        "22-chrome-snapshot-comparison.jpg",
+        "23-chrome-funding-history.jpg",
+        "24-chrome-strategy-guard.jpg",
+        "25-chrome-depth-zh.jpg",
+        "27-chrome-20-vs-deep.jpg",
+        "28-chrome-margin-stage.jpg",
+        "30-chrome-cardano-picker-en.jpg"
+      ]
+    },
+    {
+      "action": "Live Cardano extension approval / Builder Connect / account / RFQ",
+      "result": "PENDING_USER_AUTHORIZATION",
+      "evidence": "No active Builder Code configured; wallet chooser tested, no wallet signature submitted"
     }
   ]
 }

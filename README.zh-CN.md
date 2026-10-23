@@ -21,8 +21,8 @@ Guardian 在提交前，把**实时深度、杠杆、止损、账户资金、费
 | 验证项 | 结果 |
 |---|---|
 | 模块语法检查 | 通过 |
-| 自动化测试 | **68 / 68 通过** |
-| 真实公共 API | **6 / 6 通过** |
+| 自动化测试 | **86 / 86 通过** |
+| 真实公共 API | **7 / 7 通过** |
 | 中英文切换、金额计划、深度不足、资金费、涨跌情景、导出 | 浏览器实测，见下方逐项截图 |
 | 真实私有账户成功读取 | **待用户 API Wallet 授权，尚未实测成功** |
 | 实际交易执行 | 不提供交易写入 |
@@ -71,13 +71,13 @@ npm start
 
 ![订单簿成交质量](docs/screenshots/02-order-book.jpg)
 
-仅包含 API 返回的每侧 20 档，不代表全市场流动性，更不代表未来止损时还有这些挂单。
+现请求每侧最多 1,000 档，仅统计官方实际返回档位。可执行深度另取用户冲击上限与官方 mark 保护边界交集；不代表未来止损时仍有这些挂单。
 
 ### 4. 检查「计划过大、深度不足」
 
 把计划金额改为 `1000000`，金额口径保留名义金额，点击 **Convert amount to quantity / 按金额换算数量**。
 
-**实测：** 当前返回的深度无法承接，页面显示 **No · Unfilled / 否 · 剩余数量**，完整成交与退出均价留空，没有补造流动性。剩余量随行情变化；此结论只针对可见 20 档。
+**实测：** 当前返回的深度无法承接，页面显示 **No · Unfilled / 否 · 剩余数量**，完整成交与退出均价留空，没有补造流动性。剩余量随行情变化；此旧截图只针对当时前 20 档；本轮深层订单簿验证见下文。
 
 ![真实深度不足的结果](docs/screenshots/03-insufficient-depth.jpg)
 
@@ -179,7 +179,7 @@ npm run start:env
 
 ## 数据与计算边界
 
-公共接口：`/v2/time`、`/v2/markets`、`/price/v2/markPrice`、`/price/v2/depth?limit=20`、`/price/v2/klines`、`/v2/fee-tiers`。
+公共接口：`/v2/time`、`/v2/markets`、`/price/v2/markPrice`、`/price/v2/depth?limit=1000`、`/price/v2/klines`、`/v2/fee-tiers`。
 
 需 API Wallet 的接口：`/v2/account`、`/v2/symbols`、`/v2/positions`、`/v2/openOrders`、`/v2/portfolio`、`/v2/history/order?limit=20`、`/v2/history/fill?limit=20`。完整路径参数与用途见 [English README](README.md#data-sources-and-calculation-boundaries)。
 
@@ -211,3 +211,33 @@ npm run test:public
 [90 秒演示脚本](DEMO.md) · [API 核验边界](API-VERIFICATION.md) · [MIT 许可](LICENSE)
 
 较早截图用于展示未变更的流程；本次费用说明与 RFQ 截图反映新版本。已保存的仅公共数据导出是加入 RFQ 前的原始记录；新导出模式为 NO_TRADING_REAL_DATA_RFQ_OPTIONAL。
+
+## 本轮更新：深层流动性与 Cardano 钱包
+
+点击 **Connect account / 连接真实账户**，选择已安装的 Cardano 钱包，在扩展里自行批准地址与网络读取。可重新检测扩展，未安装钱包置灰。支持 CoindropV2 中的钱包别名映射，包括 Eternl/ccvault、Typhon 等，以及动态发现的 CIP-30 钱包。空钱包无需余额或 UTxO。网络不一致时提示切换。
+
+**钱包连接与 Strike 授权分开显示。** 官方 Builder Connect 需项目的有效 Builder Code。取得官方消息后，用户先审阅、确认影响，再亲自在钱包签名。本次 builder 费率上限为 0 bps，不附带 referral。授权会创建当前页面内存中的 API Wallet，并撤销同账户、同 Builder Code 的旧 API Wallet。已有 API Wallet 导入与本机签名仍可使用。
+
+**实际验证边界：** 已在用户 Chrome 验证钱包列表与检测。项目尚无有效 Builder Code；真实扩展批准、CIP-30 签名、私有账户与 RFQ 验收尚待用户授权。86 项自动化测试通过，其中钱包协议使用测试夹具，不能当作真实授权成功证明。七个公共数据接口现场读取成功。
+
+![真实 Chrome 钱包列表](docs/screenshots/30-chrome-cardano-picker-en.jpg)
+
+深度读取改为每侧最多 1,000 档。可执行价格范围是用户吃单冲击上限与官方 mark 保护边界的交集。真实约 41 万美元多仓在前 20 档无法完整覆盖，在更深且仍符合价格范围的挂单中可覆盖；并不保证实际成交。
+
+![前20档与深层对比](docs/screenshots/27-chrome-20-vs-deep.jpg)
+
+将冲击上限设为 0 bps，现场最优卖价约 3,000 美元深度不足以覆盖一万美元计划。远价挂单不会让价格范围内不足的计划通过。
+
+![价格范围不足实测](docs/screenshots/21-chrome-price-limits.jpg)
+
+保存当前深度基线后刷新，可比较同网络、方向、数量、冲击限制下的新旧官方快照；RFQ 前自动保存基线。变化只代表观察结果，不能归因于 RFQ。IOC/FOK 只是当前快照计划；TWAP 分片仅示意，不创建策略。
+
+![真实快照对比](docs/screenshots/22-chrome-snapshot-comparison.jpg)
+
+新增过去七天真实小时资金费，统计连续 1/8/24 小时窗口的中位数、P95 与最大历史支出。正数为支出，负数为收入；历史分位数不是未来概率。
+
+![历史资金费](docs/screenshots/23-chrome-funding-history.jpg)
+
+新增 TWAP/Grid 活跃策略检查。接口未授权、失败或过期均不视为“无策略”。同市场活跃策略保守拦截；已有保证金组合依据官方持仓维持保证金检查 70% 警告、90% 仅减仓、100% 强平条件与独立破产条件。
+
+![策略未知时不放行](docs/screenshots/24-chrome-strategy-guard.jpg)

@@ -31,7 +31,7 @@ export function validateRfqResponse(data,expected){
  if(data.expires_at_ms<data.created_at_ms)throw Error('Invalid RFQ expiry');
  return data;
 }
-export function rfqTrigger(analysis){return !!analysis&&(!analysis.opening.complete||analysis.slippageBps>20)}
+export function rfqTrigger(analysis){return !!analysis&&(!((analysis.execution?.opening??analysis.opening).complete)||analysis.slippageBps>20)}
 export class RfqSession{
  constructor({send,clock=()=>Date.now()}){this.send=send;this.clock=clock;this.pending=null;this.record=null;this.receivedAt=0;this.busy=false;this.generation=0;this.autoAttempted=new Set();this.lastAutoAt=-Infinity;}
  get remainingMs(){return this.record?Math.max(0,this.record.expires_at_ms-this.record.server_time_ms-(this.clock()-this.receivedAt)):0}
