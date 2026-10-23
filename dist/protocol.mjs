@@ -1,4 +1,5 @@
-// Strict GET-only boundary. This application cannot sign or forward trading writes.
+// Account reads and explicitly scoped nonbinding RFQs only. No trading writes.
+import {validateRfq} from './rfq.mjs';
 export const ORIGINS=Object.freeze({mainnet:'https://api.strikefinance.org',testnet:'https://api-v2-testnet.strikefinance.org'});
 export const PRIVATE_ROUTES=Object.freeze({account:'/v2/account',symbols:'/v2/symbols',positions:'/v2/positions',openOrders:'/v2/openOrders',portfolio:'/v2/portfolio',orderHistory:'/v2/history/order?limit=20',fillHistory:'/v2/history/fill?limit=20'});
 export function assertReadRoute(route,isPrivate){
@@ -21,5 +22,13 @@ export async function signRead(route,wallet,serverNow,subtle=crypto.subtle){
  assertReadRoute(route,true);if(!Number.isFinite(serverNow))throw Error('Strike server clock unavailable');
  const timestamp=String(Math.floor((serverNow-1000)/1000)),nonce=crypto.randomUUID();const bodyHash=hex(await subtle.digest('SHA-256',new Uint8Array()));
  const signature=hex(await wallet.sign(new TextEncoder().encode(`GET:${route}:${timestamp}:${nonce}:${bodyHash}`)));
+ return {'X-API-Wallet-Public-Key':wallet.publicKey,'X-API-Wallet-Signature':signature,'X-API-Wallet-Timestamp':timestamp,'X-API-Wallet-Nonce':nonce};
+}
+
+export async function signRfq(method,route,body,wallet,serverNow,subtle=crypto.subtle){
+ validateRfq(method,route,body);if(!Number.isFinite(serverNow))throw Error('Strike server clock unavailable');
+ const serialized=body===undefined?'':JSON.stringify(body),timestamp=String(Math.floor((serverNow-1000)/1000)),nonce=crypto.randomUUID();
+ const hash=hex(await subtle.digest('SHA-256',new TextEncoder().encode(serialized)));
+ const signature=hex(await wallet.sign(new TextEncoder().encode(`${method}:${route}:${timestamp}:${nonce}:${hash}`)));
  return {'X-API-Wallet-Public-Key':wallet.publicKey,'X-API-Wallet-Signature':signature,'X-API-Wallet-Timestamp':timestamp,'X-API-Wallet-Nonce':nonce};
 }

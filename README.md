@@ -16,7 +16,7 @@ Strike Guardian checks a proposed trade **before submission**, using Strike Fina
 - What happens if price suddenly moves 5%, 10% or 20%?
 - Is the account's effective margin mode compatible with the plan, and should the position be smaller?
 
-**Current release: read-only assessment. It does not submit trades, move funds or change account settings.** It is a standalone application plus an integration adapter; it is not yet embedded in or officially endorsed by Strike.
+**Current release: risk assessment with optional nonbinding RFQ liquidity requests. It does not submit trades, move funds or change account settings.** It is a standalone application plus an integration adapter; it is not yet embedded in or officially endorsed by Strike.
 
 ![English default interface with live Strike market data](docs/screenshots/00-overview-en.jpg)
 
@@ -27,13 +27,13 @@ Verification date: **23 October 2026**. Screenshots below are actual browser cap
 | Area | Evidence | Status |
 |---|---|---|
 | Syntax / modules | `npm run check` | Passed |
-| Deterministic engine, signatures, read-only gateway, localization | `npm test` | **57 / 57 passed** |
+| Deterministic engine, signatures, restricted gateway, localization | `npm test` | **68 / 68 passed** |
 | Public Strike APIs | `npm run test:public` | **6 / 6 verified live** |
 | Browser workflow | Screenshots and [record](docs/verification/browser-checks.json) | Live public-data flows exercised |
 | Real private account | Requires the user's registered API Wallet | **Not yet verified end to end** |
-| Trading execution | No write routes in this release | Not implemented |
+| Trading execution | Order / transfer write routes are prohibited | Not implemented |
 
-![Report rendered from the actual saved test logs](docs/screenshots/13-test-results.jpg)
+![Report rendered from the actual saved test logs](docs/screenshots/19-rfq-tests.jpg)
 
 This image is a browser screenshot of a report rendered from saved test output, not a terminal screenshot. Inspect the evidence directly: [test log](docs/verification/tests.txt), [syntax log](docs/verification/check.txt), [live API output](docs/verification/public-api.txt), [report HTML](docs/verification/report.html). Private-data tests use synthetic fixtures exclusively under `tests/`; they do not prove that a user's live account has been authorized.
 
@@ -59,7 +59,7 @@ The first visit defaults to **English**, regardless of browser language. Use the
 
 ### 2. Assess a $10,000 notional, 10× long
 
-1. Leave the network on **Mainnet · Read only** and select **BTC-USD**.
+1. Leave the network on **Mainnet · No trading** and select **BTC-USD**.
 2. Wait for **LIVE · REST** and the public-data connection banner.
 3. Click **$10,000 · 10× example**. It sets a $10,000 **notional**, 10× planned leverage and an example stop about 2% below the current mark, aligned to the official tick grid.
 4. Inspect the quantity, entry estimate and stress graph. The example is a user plan, not an actual order or recommendation.
@@ -94,15 +94,15 @@ Restore **$10,000 · 10× example** and expand **Holding time & funding estimate
 
 **Tested:** settlement counts and funding cash flows changed with the holding horizon. For this approximately $10,000 long, the screenshot shows roughly $0.11 / $0.89 / $2.68 of funding costs at 1 / 8 / 24 hours. These are estimates at the captured rate, not fixed charges. Personal trading fees were left unavailable.
 
-![Holding-time funding comparison](docs/screenshots/04-holding-funding.jpg)
+![Funding estimates without personal trading fee data](docs/screenshots/17-fees-en.jpg)
 
-Uses the official next settlement time and hourly settlement boundaries, assuming the current rate remains constant. Positive funding means income; negative means cost. Guardian does not predict the optimal holding time or future funding rates.
+Funding is separate from trading fees and uses public data without account authorization. It uses the official next settlement time and hourly settlement boundaries, assuming both the current rate and mark price remain constant. Only positions open at settlement incur that transfer. Actual future payments use each event’s rate, mark and position size. Positive funding means income; negative means cost. Guardian does not predict the optimal holding time or future funding rates.
 
 ### 6. Examine sudden price moves
 
 Use the **Price shock** slider, then review **What happens in a sudden price move?** for −20%, −10%, −5%, +5%, +10% and +20% scenarios.
 
-**Tested:** a roughly $10,000 long showed about $500 of gross loss at −5% and about $1,000 at −10%; the deeper negative scenarios flagged the modeled liquidation condition. Results after fees remained unavailable without the account fee tier.
+**Tested:** a roughly $10,000 long showed about $500 of gross loss at −5% and about $1,000 at −10%; the deeper negative scenarios flagged the modeled liquidation condition. Funding can still be estimated from public market data without account authorization. However, PnL after round-trip trading fees remains unavailable until the personal trading fee rate is verified; no assumed personal fee is substituted. Scenario PnL excludes holding-period funding, which is shown separately.
 
 ![Sudden-move scenario results](docs/screenshots/05-shock-scenarios.jpg)
 
@@ -142,7 +142,7 @@ Configure `STRIKE_NETWORK`, `STRIKE_API_PUBLIC_KEY` and `STRIKE_API_PRIVATE_KEY`
 
 ![Account authorization entry, with empty key fields](docs/screenshots/08-account-authorization.jpg)
 
-Local signing keeps the private key out of the browser. The optional in-page import uses a non-extractable WebCrypto signing key in memory, clears the inputs and requires supported Ed25519 / CORS behavior. Keys are not persisted. A registered API Wallet may itself have trading permissions, but this application's signer and gateway allow only approved GET routes.
+Local signing keeps the private key out of the browser. The optional in-page import uses a non-extractable WebCrypto signing key in memory, clears the inputs and requires supported Ed25519 / CORS behavior. Keys are not persisted. A registered API Wallet may itself have trading permissions, but this application's signer and gateway allow only approved account GET routes and narrowly scoped RFQ create / read / close requests; order creation remains prohibited.
 
 After connecting, verify account, symbols, positions, open orders and portfolio under **Data sources**. Planned leverage must match effective leverage; same-market existing positions / pending orders are unsupported in this MVP and block approval. See [full configuration and integration notes](docs/INTEGRATION.md).
 
@@ -165,6 +165,24 @@ Expand **Live price history · Latest 60 one-minute mark candles**. This uses St
 **Tested:** the chart displayed 60 official one-minute observations, with its source note. Historical prices provide context, not forecasts.
 
 ![Official mark-price history](docs/screenshots/09-price-history.jpg)
+
+### 12. Request liquidity with Strike RFQ
+
+When the current book cannot support the plan or entry VWAP deviation exceeds 20 bps, use **Large-order liquidity assistant · Strike RFQ**. Connect the intended account's registered API Wallet, then click **Request liquidity / retry same request**. The request uses the official market's base-asset quantity, not USD notional.
+
+Alternatively enable **Automatically request liquidity when depth is insufficient** (off by default). After a 1.5-second stable draft, the assistant submits one nonbinding RFQ for an eligible deficient-depth / excessive-deviation plan. Automatic requests are at least 60 seconds apart and are not repeated for the same size and market during the session. Account / network changes disable automatic requests. This is a Guardian automation policy, not Strike's official threshold.
+
+- Official routes: `POST /v2/rfq`, `GET /v2/rfq/{rfq_id}`, `DELETE /v2/rfq/{rfq_id}`. API Wallet authorization required; current implementation uses the wallet's bound default account.
+- Direction is deliberately omitted to request both sides. No order, price, builder fee or account selector is sent.
+- Unknown create outcomes retry the identical body and `client_rfq_id`; the client never silently creates a second request. Paused, rate-limited and unavailable errors stop automation and remain visible.
+- State is polled every 5 seconds while active, with server-relative expiry countdown and a fresh order-book assessment. Requests typically expire after 60 seconds. You may close your request early.
+- `quoted` means a Quoter reports preparing public-book liquidity. It does **not** reserve liquidity, lock price or guarantee execution. The risk result is never overridden by RFQ status. No trade is submitted automatically.
+
+**Verified:** both language UIs show the real authorization requirement; checking auto-request without credentials still sends no RFQ. Signing, exact-body idempotent retry, expiry, malformed responses, session isolation, default-account scope, paused responses, route restrictions and server origin / body guards have automated contract coverage. **No authenticated live RFQ has been sent in this session.** Official feature gates can return `RFQ_PAUSED`; a real success requires an authorized wallet and an enabled Strike deployment.
+
+![RFQ assistant, correctly blocked before authorization](docs/screenshots/15-rfq-en.jpg)
+
+[Official product guide](https://docs.strikefinance.org/perpetuals/strike-rfq) · [Official API contract](https://github.com/strike-finance/strike-finance-skills/blob/main/skills/strike-rfq/SKILL.md)
 
 ## Data sources and calculation boundaries
 
@@ -211,6 +229,8 @@ npm run test:public
 
 `npm test` is deterministic and does not require a wallet or network. `test:public` requires outbound access to Strike; a network or service failure should fail visibly, not substitute saved data. The committed captures are dated evidence and are never fed back into the production UI.
 
-Key files: `dist/risk.mjs` (fixed-point engine), `dist/market-analysis.mjs` (book / funding / shocks), `dist/admission.mjs` (live-data admission), `dist/strike-client.mjs` (collector), `dist/i18n.mjs` (presentation localization), `server.mjs` (loopback read-only gateway).
+Key files: `dist/risk.mjs` (fixed-point engine), `dist/market-analysis.mjs` (book / funding / shocks), `dist/admission.mjs` (live-data admission), `dist/strike-client.mjs` (collector), `dist/i18n.mjs` (presentation localization), `server.mjs` (restricted loopback gateway), `dist/rfq.mjs` (nonbinding RFQ session).
 
 [Official builder reference](https://github.com/strike-finance/strike-builder-reference) · [API verification details](API-VERIFICATION.md) · [MIT license](LICENSE)
+
+Earlier screenshots illustrate unchanged workflows; fee wording and RFQ screenshots reflect this update. The captured public-only export predates RFQ and retains its original READ_ONLY_REAL_DATA mode. New exports use NO_TRADING_REAL_DATA_RFQ_OPTIONAL.

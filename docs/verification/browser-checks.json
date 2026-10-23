@@ -1,6 +1,6 @@
 {
   "date": "2026-10-23",
-  "environment": "Local application, mainnet public GET only; no API Wallet configured",
+  "environment": "Local application; real public GET data; no API Wallet configured; nonbinding RFQ not sent",
   "checks": [
     {
       "action": "English default",
@@ -36,6 +36,21 @@
       "action": "Private account live authorization",
       "result": "NOT VERIFIED",
       "evidence": "No user API Wallet used; no claim of live account end-to-end success"
+    },
+    {
+      "action": "RFQ opt-in without credentials",
+      "result": "PASS",
+      "evidence": "Automatic checkbox toggled; request remains disabled; No RFQ sent in English / Chinese"
+    },
+    {
+      "action": "Funding vs personal trading fees",
+      "result": "PASS",
+      "evidence": "Public funding estimate populated; personal fee column requires authorization; bilingual explanation verified"
+    },
+    {
+      "action": "Live authenticated RFQ",
+      "result": "NOT VERIFIED",
+      "evidence": "No API Wallet connected; no request sent to market makers"
     }
   ]
 }

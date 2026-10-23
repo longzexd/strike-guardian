@@ -1,4 +1,5 @@
-import {ORIGINS,PRIVATE_ROUTES,assertReadRoute,importApiWallet,signRead} from './protocol.mjs';
+import {validateRfq} from './rfq.mjs';
+import {ORIGINS,PRIVATE_ROUTES,assertReadRoute,importApiWallet,signRead,signRfq} from './protocol.mjs';
 export class StrikeClient{
  constructor({network='mainnet',fetcher=fetch,clock=()=>Date.now(),authenticatedRead=null}={}){if(!ORIGINS[network])throw Error('Unknown network');this.network=network;this.origin=ORIGINS[network];this.fetcher=(...args)=>fetcher(...args);this.clock=clock;this.offset=null;this.syncedAt=0;this.wallet=null;this.local=false;this.localAvailable=false;this.generation=0;this.status={};this.hostRead=authenticatedRead;}
  now(){if(this.offset===null||this.clock()-this.syncedAt>60000)throw Error('Strike server clock not synchronized');return this.clock()+this.offset}
@@ -16,6 +17,19 @@ export class StrikeClient{
  let data;try{data=await response.json()}catch{throw Error('Non-JSON response: '+route)}
  if(generation!==this.generation)throw Error('Account session changed; response discarded');
  if(!response.ok){if(response.status===401){this.wallet=null;this.local=false}throw Error(`Strike HTTP ${response.status}: ${route}`)}
+ return data;
+ }
+ async rfq(method,route,body){
+ validateRfq(method,route,body);if(!this.connected)throw Error('API Wallet authorization required');
+ if(this.hostRead&&!this.wallet&&!this.local)throw Error('Host RFQ writer not configured');
+ const generation=this.generation;let url,headers={},options={method,credentials:'omit',cache:'no-store',signal:AbortSignal.timeout(8000)};
+ if(this.local){url='/api/rfq?network='+this.network+'&route='+encodeURIComponent(route);}else{url=this.origin+route;headers=await signRfq(method,route,body,this.wallet,this.now());}
+ if(body!==undefined){options.body=JSON.stringify(body);headers['Content-Type']='application/json';}options.headers=headers;
+ if(generation!==this.generation)throw Error('Account session changed; request cancelled');
+ let r;try{r=await this.fetcher(url,options)}catch{throw Object.assign(Error('RFQ outcome unknown; retry the identical request'),{code:'RFQ_MUTATION_INDETERMINATE'})}
+ let data;try{data=await r.json()}catch{throw Object.assign(Error('RFQ response invalid; retry the identical request'),{code:'RFQ_MUTATION_INDETERMINATE'})}
+ if(generation!==this.generation)throw Error('Account session changed; response discarded');
+ if(!r.ok){if(r.status===401){this.wallet=null;this.local=false;}throw Object.assign(Error('Strike RFQ HTTP '+r.status+': '+(data.error??'Unavailable')),{code:data.code??'HTTP_'+r.status,retryAfter:r.headers.get('Retry-After')})}
  return data;
  }
  async syncClock(){const start=this.clock();const data=await this.request('/v2/time');const end=this.clock();if(!Number.isFinite(data.serverTime))throw Error('Missing official serverTime');this.offset=data.serverTime-(start+end)/2;this.syncedAt=end;return data}
