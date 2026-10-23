@@ -1,5 +1,6 @@
 // Presentation-only localization. Never translates API payloads, plan values or exports.
 export const messages = {
+"本应用已配置 Builder Code：StrikeGuardian。无需填写。是否有效以 Strike 官方授权接口返回为准。":"Builder Code configured: StrikeGuardian. No entry needed. Activation is confirmed only by the official Strike authorization response.",
 "先连接 Cardano 钱包，再单独授权 Strike 账户。钱包连接无需 Builder Code；Strike 账户授权需要有效 Builder Code，或使用已有 API Wallet。":"Connect a Cardano wallet, then separately authorize your Strike account. Wallet connection needs no Builder Code. Strike account authorization requires an active Builder Code, or use your existing API Wallet.",
 "重新检测钱包":"Refresh wallet detection",
 "获取 Strike 授权消息":"Get Strike authorization message",

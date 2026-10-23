@@ -218,7 +218,7 @@ npm run test:public
 
 **钱包连接与 Strike 授权分开显示。** 官方 Builder Connect 需项目的有效 Builder Code。取得官方消息后，用户先审阅、确认影响，再亲自在钱包签名。本次 builder 费率上限为 0 bps，不附带 referral。授权会创建当前页面内存中的 API Wallet，并撤销同账户、同 Builder Code 的旧 API Wallet。已有 API Wallet 导入与本机签名仍可使用。
 
-**实际验证边界：** 已在用户 Chrome 验证钱包列表与检测。项目尚无有效 Builder Code；真实扩展批准、CIP-30 签名、私有账户与 RFQ 验收尚待用户授权。86 项自动化测试通过，其中钱包协议使用测试夹具，不能当作真实授权成功证明。七个公共数据接口现场读取成功。
+**实际验证边界：** 已在用户 Chrome 验证钱包列表与检测。现已配置用户提供的 StrikeGuardian Builder Code，是否生效仍待官方接口验证；真实扩展批准、CIP-30 签名、私有账户与 RFQ 验收尚待用户授权。86 项自动化测试通过，其中钱包协议使用测试夹具，不能当作真实授权成功证明。七个公共数据接口现场读取成功。
 
 ![真实 Chrome 钱包列表](docs/screenshots/30-chrome-cardano-picker-en.jpg)
 

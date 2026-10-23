@@ -125,6 +125,6 @@ RFQ 自动化与完整边界见 README.zh-CN.md 第 12 节；createStrikeRiskGat
 
 仅两条官方授权 POST：/auth/builder/request-signature（address、chain=cardano、code、fee_share_bps=0、public_key）与 /auth/builder/verify-signature（nonce、wallet_signature）。CIP-30 signData 的 payload 是官方原文 UTF-8 转 hex；提交 signature:key。Ed25519 私钥不可导出，仅内存；验证返回的公钥、builder code、0费率及有效期后才启用账户请求。无资金交易。
 
-项目没有配置有效 Builder Code。先让用户连接钱包、确认地址/网络；这不能读取 Strike 账户。用户可另行导入其已注册 API Wallet。授权会撤销同账户同 builder code 的旧 API Wallet，必须展示官方消息及这个影响。
+项目已配置 StrikeGuardian Builder Code，是否生效待官方接口验证。先让用户连接钱包、确认地址/网络；这不能读取 Strike 账户。用户可另行导入其已注册 API Wallet。授权会撤销同账户同 builder code 的旧 API Wallet，必须展示官方消息及这个影响。
 
 新增深度 /price/v2/depth?limit=1000、七天真实 funding history、私有 TWAP/Grid。当前请求每10秒轮询；统计 funding 有独立5分钟读取有效期，不驱动实时准入。前20档只是对照，不当成全部市场。执行范围与官方保护价格相交；新增风险阶段依据隔离/全仓真实保证金作用范围。

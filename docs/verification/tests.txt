@@ -6,517 +6,517 @@ TAP version 13
 # Subtest: Cardano discovery handles aliases and never falls back from selected missing wallet
 ok 1 - Cardano discovery handles aliases and never falls back from selected missing wallet
   ---
-  duration_ms: 3.0185
+  duration_ms: 1.607333
   type: 'test'
   ...
 # Subtest: empty wallet connects without querying balance or UTxOs; wrong network is rejected
 ok 2 - empty wallet connects without querying balance or UTxOs; wrong network is rejected
   ---
-  duration_ms: 0.436084
+  duration_ms: 0.263333
   type: 'test'
   ...
 # Subtest: address conversion rejects malformed, reward, wrong length and wrong network
 ok 3 - address conversion rejects malformed, reward, wrong length and wrong network
   ---
-  duration_ms: 0.330792
+  duration_ms: 0.133542
   type: 'test'
   ...
 # Subtest: builder authorization uses exact UTF8 message, zero fee and bound API public key
 ok 4 - builder authorization uses exact UTF8 message, zero fee and bound API public key
   ---
-  duration_ms: 12.586042
+  duration_ms: 7.707083
   type: 'test'
   ...
 # Subtest: missing code and expired or changed-wallet challenges never request verification
 ok 5 - missing code and expired or changed-wallet challenges never request verification
   ---
-  duration_ms: 0.441542
+  duration_ms: 0.452083
   type: 'test'
   ...
 # Subtest: invalid builder and mismatched API key response never produce an authorized session
 ok 6 - invalid builder and mismatched API key response never produce an authorized session
   ---
-  duration_ms: 4.252708
+  duration_ms: 1.159958
   type: 'test'
   ...
 # Subtest: price window intersects official mark protection and user best-level impact
 ok 7 - price window intersects official mark protection and user best-level impact
   ---
-  duration_ms: 1.697458
+  duration_ms: 1.588917
   type: 'test'
   ...
 # Subtest: far liquidity cannot turn an in-window shortage into a complete executable fill
 ok 8 - far liquidity cannot turn an in-window shortage into a complete executable fill
   ---
-  duration_ms: 1.272709
+  duration_ms: 0.997
   type: 'test'
   ...
 # Subtest: deep book can cover a plan absent from the first 20 levels
 ok 9 - deep book can cover a plan absent from the first 20 levels
   ---
-  duration_ms: 2.204833
+  duration_ms: 1.500167
   type: 'test'
   ...
 # Subtest: malformed bounds, crossed and unsorted books are rejected
 ok 10 - malformed bounds, crossed and unsorted books are rejected
   ---
-  duration_ms: 0.50925
+  duration_ms: 0.450792
   type: 'test'
   ...
 # Subtest: official margin stages keep bankruptcy separate from ratio thresholds
 ok 11 - official margin stages keep bankruptcy separate from ratio thresholds
   ---
-  duration_ms: 0.0825
+  duration_ms: 0.130125
   type: 'test'
   ...
 # Subtest: snapshot comparison binds network, direction, size, limits and official time
 ok 12 - snapshot comparison binds network, direction, size, limits and official time
   ---
-  duration_ms: 0.460125
+  duration_ms: 0.528375
   type: 'test'
   ...
 # Subtest: historical funding uses contiguous empirical windows, handles side and never fills gaps
 ok 13 - historical funding uses contiguous empirical windows, handles side and never fills gaps
   ---
-  duration_ms: 0.574583
+  duration_ms: 0.459292
   type: 'test'
   ...
 # Subtest: strategy audit distinguishes authoritative empty lists, live conflicts and unknown state
 ok 14 - strategy audit distinguishes authoritative empty lists, live conflicts and unknown state
   ---
-  duration_ms: 0.9105
+  duration_ms: 0.800875
   type: 'test'
   ...
 # Subtest: public allowlist admits 1000-level depth and fixed funding history, rejects arbitrary parameters
 ok 15 - public allowlist admits 1000-level depth and fixed funding history, rejects arbitrary parameters
   ---
-  duration_ms: 0.860417
+  duration_ms: 0.431708
   type: 'test'
   ...
 # Subtest: language defaults to English and only accepts supported locales
 ok 16 - language defaults to English and only accepts supported locales
   ---
-  duration_ms: 0.980875
+  duration_ms: 0.5035
   type: 'test'
   ...
 # Subtest: English covers static Chinese copy and accessible placeholders
 ok 17 - English covers static Chinese copy and accessible placeholders
   ---
-  duration_ms: 10.689625
+  duration_ms: 4.223084
   type: 'test'
   ...
 # Subtest: dynamic account errors, depth and funding preserve values in English
 ok 18 - dynamic account errors, depth and funding preserve values in English
   ---
-  duration_ms: 0.240666
+  duration_ms: 0.107791
   type: 'test'
   ...
 # Subtest: Chinese source remains lossless and technical payload text is unchanged
 ok 19 - Chinese source remains lossless and technical payload text is unchanged
   ---
-  duration_ms: 0.434542
+  duration_ms: 0.17025
   type: 'test'
   ...
 # Subtest: risk failures stay explicit in both languages
 ok 20 - risk failures stay explicit in both languages
   ---
-  duration_ms: 0.233875
+  duration_ms: 0.098834
   type: 'test'
   ...
 # Subtest: real account uses official equity, available balance and effective per-symbol settings
 ok 21 - real account uses official equity, available balance and effective per-symbol settings
   ---
-  duration_ms: 1.596167
+  duration_ms: 1.180542
   type: 'test'
   ...
 # Subtest: each mandatory private read failure or missing field blocks complete assessment
 ok 22 - each mandatory private read failure or missing field blocks complete assessment
   ---
-  duration_ms: 1.059792
+  duration_ms: 0.679542
   type: 'test'
   ...
 # Subtest: no fee tier, missing discounts or unrecognized fee tier cannot fall back to public defaults
 ok 23 - no fee tier, missing discounts or unrecognized fee tier cannot fall back to public defaults
   ---
-  duration_ms: 0.313208
+  duration_ms: 0.150625
   type: 'test'
   ...
 # Subtest: stale private data and market data fail closed
 ok 24 - stale private data and market data fail closed
   ---
-  duration_ms: 1.817042
+  duration_ms: 1.343458
   type: 'test'
   ...
 # Subtest: manually claiming isolated cannot override official cross mode
 ok 25 - manually claiming isolated cannot override official cross mode
   ---
-  duration_ms: 0.627875
+  duration_ms: 0.358
   type: 'test'
   ...
 # Subtest: missing effective symbol mode is not replaced by account default
 ok 26 - missing effective symbol mode is not replaced by account default
   ---
-  duration_ms: 0.38425
+  duration_ms: 0.1105
   type: 'test'
   ...
 # Subtest: planned leverage must match real market configuration
 ok 27 - planned leverage must match real market configuration
   ---
-  duration_ms: 0.287208
+  duration_ms: 0.3005
   type: 'test'
   ...
 # Subtest: actual account fees and funding feed risk model, no fixed demo fee
 ok 28 - actual account fees and funding feed risk model, no fixed demo fee
   ---
-  duration_ms: 0.594708
+  duration_ms: 0.438334
   type: 'test'
   ...
 # Subtest: pending same-market orders, existing positions, and disabled trading prevent approval
 ok 29 - pending same-market orders, existing positions, and disabled trading prevent approval
   ---
-  duration_ms: 0.835042
+  duration_ms: 0.36725
   type: 'test'
   ...
 # Subtest: account IDs are checked across private resources
 ok 30 - account IDs are checked across private resources
   ---
-  duration_ms: 0.633166
+  duration_ms: 0.284583
   type: 'test'
   ...
 # Subtest: true zero account balances are accepted as data but cannot approve risk
 ok 31 - true zero account balances are accepted as data but cannot approve risk
   ---
-  duration_ms: 0.411458
+  duration_ms: 0.150042
   type: 'test'
   ...
 # Subtest: live recommendation follows account fees, official mode and fixed cap
 ok 32 - live recommendation follows account fees, official mode and fixed cap
   ---
-  duration_ms: 2.0315
+  duration_ms: 1.723041
   type: 'test'
   ...
 # Subtest: missing official funding data and invalid holding time block complete assessment
 ok 33 - missing official funding data and invalid holding time block complete assessment
   ---
-  duration_ms: 0.218791
+  duration_ms: 0.330917
   type: 'test'
   ...
 # Subtest: stop tick grid and worst executable price protection use market rules
 ok 34 - stop tick grid and worst executable price protection use market rules
   ---
-  duration_ms: 0.296625
+  duration_ms: 0.2645
   type: 'test'
   ...
 # Subtest: 1W notional and 1W margin are distinct and quantized on official grid
 ok 35 - 1W notional and 1W margin are distinct and quantized on official grid
   ---
-  duration_ms: 0.171208
+  duration_ms: 0.1295
   type: 'test'
   ...
 # Subtest: book VWAP walks levels; insufficient liquidity never invents a full fill
 ok 36 - book VWAP walks levels; insufficient liquidity never invents a full fill
   ---
-  duration_ms: 0.197791
+  duration_ms: 0.14125
   type: 'test'
   ...
 # Subtest: holding cost counts actual hourly settlement boundaries and sign
 ok 37 - holding cost counts actual hourly settlement boundaries and sign
   ---
-  duration_ms: 1.073083
+  duration_ms: 0.886625
   type: 'test'
   ...
 # Subtest: price gaps show stressed mark equity without assuming a stop filled
 ok 38 - price gaps show stressed mark equity without assuming a stop filled
   ---
-  duration_ms: 0.340917
+  duration_ms: 0.188375
   type: 'test'
   ...
 # Subtest: read allowlist excludes order creation, arbitrary query fields and URLs
 ok 39 - read allowlist excludes order creation, arbitrary query fields and URLs
   ---
-  duration_ms: 0.379875
+  duration_ms: 0.291625
   type: 'test'
   ...
 # Subtest: browser WebCrypto API key import validates pair and produces official Ed25519 signature
 ok 40 - browser WebCrypto API key import validates pair and produces official Ed25519 signature
   ---
-  duration_ms: 14.06725
+  duration_ms: 12.0615
   type: 'test'
   ...
 # Subtest: client uses official server time and never fetches private data without auth
 ok 41 - client uses official server time and never fetches private data without auth
   ---
-  duration_ms: 12.770958
+  duration_ms: 9.735166
   type: 'test'
   ...
 # Subtest: client clears session on 401 and rejects late account responses after disconnect
 ok 42 - client clears session on 401 and rejects late account responses after disconnect
   ---
-  duration_ms: 0.982458
+  duration_ms: 1.075417
   type: 'test'
   ...
 # Subtest: host integration reader reuses authenticated GET and evaluates without importing keys
 ok 43 - host integration reader reuses authenticated GET and evaluates without importing keys
   ---
-  duration_ms: 2.640958
+  duration_ms: 2.246833
   type: 'test'
   ...
 # Subtest: recommendation recomputes holding funding reserve for each candidate quantity
 ok 44 - recommendation recomputes holding funding reserve for each candidate quantity
   ---
-  duration_ms: 0.429375
+  duration_ms: 0.413791
   type: 'test'
   ...
 # Subtest: missing strategy feeds or same-market active algorithms block complete admission
 ok 45 - missing strategy feeds or same-market active algorithms block complete admission
   ---
-  duration_ms: 0.157917
+  duration_ms: 0.2055
   type: 'test'
   ...
 # Subtest: admission filters deep prices outside user impact without relaxing the mark policy
 ok 46 - admission filters deep prices outside user impact without relaxing the mark policy
   ---
-  duration_ms: 0.132792
+  duration_ms: 0.201042
   type: 'test'
   ...
 # Subtest: existing official margin profiles requiring risk reduction conservatively block new exposure
 ok 47 - existing official margin profiles requiring risk reduction conservatively block new exposure
   ---
-  duration_ms: 0.14
+  duration_ms: 0.091542
   type: 'test'
   ...
 # Subtest: RFQ uses base size, official precision and max, and never discloses direction
 ok 48 - RFQ uses base size, official precision and max, and never discloses direction
   ---
-  duration_ms: 2.897333
+  duration_ms: 1.086
   type: 'test'
   ...
 # Subtest: RFQ allowlist cannot sign trading writes, response writes, extra fields or scope selectors
 ok 49 - RFQ allowlist cannot sign trading writes, response writes, extra fields or scope selectors
   ---
-  duration_ms: 0.3855
+  duration_ms: 0.352625
   type: 'test'
   ...
 # Subtest: RFQ signature covers exact POST body and method with fresh nonce
 ok 50 - RFQ signature covers exact POST body and method with fresh nonce
   ---
-  duration_ms: 11.531333
+  duration_ms: 8.719
   type: 'test'
   ...
 # Subtest: uncertain RFQ creation retries exact body and client ID, not a second request
 ok 51 - uncertain RFQ creation retries exact body and client ID, not a second request
   ---
-  duration_ms: 0.489583
+  duration_ms: 0.66575
   type: 'test'
   ...
 # Subtest: automatic RFQ runs once per plan and observes 60-second backoff
 ok 52 - automatic RFQ runs once per plan and observes 60-second backoff
   ---
-  duration_ms: 0.210167
+  duration_ms: 0.295458
   type: 'test'
   ...
 # Subtest: RFQ expiry uses server-relative countdown and polling validates identity and revision
 ok 53 - RFQ expiry uses server-relative countdown and polling validates identity and revision
   ---
-  duration_ms: 0.288459
+  duration_ms: 0.2345
   type: 'test'
   ...
 # Subtest: RFQ rejects malformed/mismatched official responses and late account-session results
 ok 54 - RFQ rejects malformed/mismatched official responses and late account-session results
   ---
-  duration_ms: 0.228125
+  duration_ms: 0.317166
   type: 'test'
   ...
 # Subtest: depth shortage and excessive VWAP deviation trigger RFQ, ordinary depth does not
 ok 55 - depth shortage and excessive VWAP deviation trigger RFQ, ordinary depth does not
   ---
-  duration_ms: 0.055334
+  duration_ms: 0.05525
   type: 'test'
   ...
 # Subtest: RFQ client requires authorization and preserves paused/rate-limit errors
 ok 56 - RFQ client requires authorization and preserves paused/rate-limit errors
   ---
-  duration_ms: 16.619417
+  duration_ms: 11.394625
   type: 'test'
   ...
 # Subtest: known long: VWAP, conservative fee reserve and stop-risk
 ok 57 - known long: VWAP, conservative fee reserve and stop-risk
   ---
-  duration_ms: 2.374042
+  duration_ms: 1.250416
   type: 'test'
   ...
 # Subtest: official isolated liquidation examples: both signed directions
 ok 58 - official isolated liquidation examples: both signed directions
   ---
-  duration_ms: 0.269708
+  duration_ms: 0.215416
   type: 'test'
   ...
 # Subtest: short stop direction and risk
 ok 59 - short stop direction and risk
   ---
-  duration_ms: 0.293708
+  duration_ms: 0.344791
   type: 'test'
   ...
 # Subtest: reject stale/future mark, stale rules and depth
 ok 60 - reject stale/future mark, stale rules and depth
   ---
-  duration_ms: 0.4795
+  duration_ms: 0.854
   type: 'test'
   ...
 # Subtest: offline fixture never fills
 ok 61 - offline fixture never fills
   ---
-  duration_ms: 0.183542
+  duration_ms: 0.32775
   type: 'test'
   ...
 # Subtest: invalid values fail closed
 ok 62 - invalid values fail closed
   ---
-  duration_ms: 0.676208
+  duration_ms: 0.272
   type: 'test'
   ...
 # Subtest: official size min, max and anchored step
 ok 63 - official size min, max and anchored step
   ---
-  duration_ms: 0.943417
+  duration_ms: 0.26775
   type: 'test'
   ...
 # Subtest: budget and leverage caps block aggressive orders
 ok 64 - budget and leverage caps block aggressive orders
   ---
-  duration_ms: 0.136
+  duration_ms: 0.088791
   type: 'test'
   ...
 # Subtest: market status and reduce-only block new exposure
 ok 65 - market status and reduce-only block new exposure
   ---
-  duration_ms: 0.303
+  duration_ms: 0.341125
   type: 'test'
   ...
 # Subtest: depth shortage, crossed book, slippage
 ok 66 - depth shortage, crossed book, slippage
   ---
-  duration_ms: 0.408542
+  duration_ms: 0.312
   type: 'test'
   ...
 # Subtest: multi-level VWAP
 ok 67 - multi-level VWAP
   ---
-  duration_ms: 0.312334
+  duration_ms: 0.15525
   type: 'test'
   ...
 # Subtest: tier boundaries inclusive and market leverage cap
 ok 68 - tier boundaries inclusive and market leverage cap
   ---
-  duration_ms: 0.261708
+  duration_ms: 0.117917
   type: 'test'
   ...
 # Subtest: recommendation passes same gate and leaves 5% risk headroom
 ok 69 - recommendation passes same gate and leaves 5% risk headroom
   ---
-  duration_ms: 0.794459
+  duration_ms: 0.340125
   type: 'test'
   ...
 # Subtest: recommendation refuses stale data and wrong stop
 ok 70 - recommendation refuses stale data and wrong stop
   ---
-  duration_ms: 1.602458
+  duration_ms: 1.159375
   type: 'test'
   ...
 # Subtest: fill reserves margin, deducts fees; repeated market blocked
 ok 71 - fill reserves margin, deducts fees; repeated market blocked
   ---
-  duration_ms: 1.696375
+  duration_ms: 1.254125
   type: 'test'
   ...
 # Subtest: portfolio margin and maximum positions enforced
 ok 72 - portfolio margin and maximum positions enforced
   ---
-  duration_ms: 0.2405
+  duration_ms: 0.146792
   type: 'test'
   ...
 # Subtest: symbol mismatch cannot price another market
 ok 73 - symbol mismatch cannot price another market
   ---
-  duration_ms: 0.100541
+  duration_ms: 0.040208
   type: 'test'
   ...
 # Subtest: fixed amount rejects cross, unknown, missing or invalid margin mode
 ok 74 - fixed amount rejects cross, unknown, missing or invalid margin mode
   ---
-  duration_ms: 0.266792
+  duration_ms: 0.200208
   type: 'test'
   ...
 # Subtest: isolated fixed amount validates the amount and estimates against cap
 ok 75 - isolated fixed amount validates the amount and estimates against cap
   ---
-  duration_ms: 0.314
+  duration_ms: 0.149625
   type: 'test'
   ...
 # Subtest: fixed amount recommendation leaves headroom within smaller budget
 ok 76 - fixed amount recommendation leaves headroom within smaller budget
   ---
-  duration_ms: 2.586959
+  duration_ms: 0.854417
   type: 'test'
   ...
 # Subtest: price mode still requires explicit isolated and ignores hidden fixed amount
 ok 77 - price mode still requires explicit isolated and ignores hidden fixed amount
   ---
-  duration_ms: 0.906708
+  duration_ms: 0.198041
   type: 'test'
   ...
 # Subtest: switching to cross blocks a previously valid fixed-amount order
 ok 78 - switching to cross blocks a previously valid fixed-amount order
   ---
-  duration_ms: 0.118542
+  duration_ms: 0.172208
   type: 'test'
   ...
 # Subtest: paper receipt preserves confirmed mode and fixed amount for audit
 ok 79 - paper receipt preserves confirmed mode and fixed amount for audit
   ---
-  duration_ms: 0.103
+  duration_ms: 0.171041
   type: 'test'
   ...
 # Subtest: gateway rejects all write methods before forwarding
 ok 80 - gateway rejects all write methods before forwarding
   ---
-  duration_ms: 1.388167
+  duration_ms: 1.169625
   type: 'test'
   ...
 # Subtest: gateway rejects unapproved paths, unknown networks and cross-origin access
 ok 81 - gateway rejects unapproved paths, unknown networks and cross-origin access
   ---
-  duration_ms: 0.689458
+  duration_ms: 0.402167
   type: 'test'
   ...
 # Subtest: gateway status does not expose secrets, and obsolete simulated endpoints are absent
 ok 82 - gateway status does not expose secrets, and obsolete simulated endpoints are absent
   ---
-  duration_ms: 0.460584
+  duration_ms: 0.193041
   type: 'test'
   ...
 # Subtest: gateway forwards only validated official GET response
 ok 83 - gateway forwards only validated official GET response
   ---
-  duration_ms: 1.801875
+  duration_ms: 1.171792
   type: 'test'
   ...
 # Subtest: local signer matches official GET signature and enforces configured network
 ok 84 - local signer matches official GET signature and enforces configured network
   ---
-  duration_ms: 7.438833
+  duration_ms: 3.395708
   type: 'test'
   ...
 # Subtest: RFQ gateway rejects cross-origin, oversized, duplicate-field, trade and extra-field requests
 ok 85 - RFQ gateway rejects cross-origin, oversized, duplicate-field, trade and extra-field requests
   ---
-  duration_ms: 0.549792
+  duration_ms: 0.334167
   type: 'test'
   ...
 # Subtest: local RFQ signer forwards only exact allowed body, matches POST signature and preserves paused code
 ok 86 - local RFQ signer forwards only exact allowed body, matches POST signature and preserves paused code
   ---
-  duration_ms: 1.940125
+  duration_ms: 1.684458
   type: 'test'
   ...
 1..86
@@ -527,4 +527,4 @@ ok 86 - local RFQ signer forwards only exact allowed body, matches POST signatur
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 142.295458
+# duration_ms 113.349541
